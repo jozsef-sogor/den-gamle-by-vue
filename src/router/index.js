@@ -1,13 +1,42 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Map from '../views/Map.vue';
+import Welcome from '../views/Welcome.vue';
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '/',
+        name: 'welcome',
+        component: Welcome
+    },
+    {
+        path: '/preferences',
+        name: 'preferences',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import(
+                /* webpackChunkName: "Preferences" */ '../views/Preferences.vue'
+            )
+    },
+    {
+        path: '/routes',
+        name: 'routes',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import(/* webpackChunkName: "Routes" */ '../views/Routes.vue')
+    },
+    {
+        path: '/map',
         name: 'map',
-        component: Map
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import(/* webpackChunkName: "Map" */ '../views/Map.vue')
     },
     {
         path: '/informaton',
