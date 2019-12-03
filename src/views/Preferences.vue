@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div class="preferences">Preferences</div>
 </template>
 
 <style lang="scss"></style>

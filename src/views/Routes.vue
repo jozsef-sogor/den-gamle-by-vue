@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div class="routes">Routes</div>
 </template>
 
 <style lang="scss"></style>

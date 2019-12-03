@@ -7,7 +7,8 @@ const routes = [
     {
         path: '/',
         name: 'welcome',
-        component: Welcome
+        component: Welcome,
+        meta: { hideNavigation: true }
     },
     {
         path: '/preferences',
@@ -18,32 +19,25 @@ const routes = [
         component: () =>
             import(
                 /* webpackChunkName: "Preferences" */ '../views/Preferences.vue'
-            )
+            ),
+        meta: { hideNavigation: true }
     },
     {
         path: '/routes',
         name: 'routes',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-            import(/* webpackChunkName: "Routes" */ '../views/Routes.vue')
+            import(/* webpackChunkName: "Routes" */ '../views/Routes.vue'),
+        meta: { hideNavigation: true }
     },
     {
         path: '/map',
         name: 'map',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
             import(/* webpackChunkName: "Map" */ '../views/Map.vue')
     },
     {
         path: '/informaton',
         name: 'information',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
             import(
                 /* webpackChunkName: "Information" */ '../views/Information.vue'

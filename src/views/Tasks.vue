@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div class="tasks">Tasks</div>
 </template>
 
 <style lang="scss"></style>
