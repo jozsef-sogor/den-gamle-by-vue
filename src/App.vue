@@ -9,6 +9,7 @@
 <style lang="scss"></style>
 
 <script>
+import './styles/reboot.module.scss';
 import Navbar from './components/Navbar.vue';
 import Heading from './components/Heading.vue';
 

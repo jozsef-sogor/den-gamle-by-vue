@@ -7,6 +7,7 @@
 <style lang="scss">
 .heading {
     font-size: 2rem;
+    border: 1px solid black;
 }
 </style>
 
