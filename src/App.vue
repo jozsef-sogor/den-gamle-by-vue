@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <Navbar v-if="!$route.meta.hideNavigation" />
+        <Heading />
         <router-view />
     </div>
 </template>
@@ -9,10 +10,12 @@
 
 <script>
 import Navbar from './components/Navbar.vue';
+import Heading from './components/Heading.vue';
 
 export default {
     components: {
-        Navbar
+        Navbar,
+        Heading
     }
 };
 </script>

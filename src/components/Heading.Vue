@@ -1,9 +1,17 @@
 <template>
-    <div class="heading"></div>
+    <div class="heading">
+        <h1>Test</h1>
+    </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.heading {
+    font-size: 2rem;
+}
+</style>
 
 <script>
-export default {};
+export default {
+    name: 'head'
+};
 </script>
