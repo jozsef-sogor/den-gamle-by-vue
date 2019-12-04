@@ -1,5 +1,5 @@
 <template>
-    <div class="routes-card"></div>
+    <div class="heading"></div>
 </template>
 
 <style lang="scss"></style>
