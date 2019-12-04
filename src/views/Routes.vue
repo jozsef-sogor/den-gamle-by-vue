@@ -1,9 +1,17 @@
 <template>
-    <div class="routes">Routes</div>
+    <div class="routes">
+        <routesCard />
+    </div>
 </template>
 
 <style lang="scss"></style>
 
 <script>
-export default {};
+import routesCard from '../components/RoutesCard.vue';
+
+export default {
+    components: {
+        routesCard
+    }
+};
 </script>
