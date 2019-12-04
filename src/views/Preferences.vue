@@ -3,9 +3,9 @@
         <v-container fluid>
             <v-row>
                 <v-col cols="12">
-                    <v-subheader class="pl-0 black--text">
+                    <h5>
                         How much time do you have?
-                    </v-subheader>
+                    </h5>
                     <div class="slider-flex">
                         <p class="hour">1h</p>
                         <v-slider
@@ -23,23 +23,31 @@
         </v-container>
 
         <v-col cols="12">
-            <header>Who are you visiting with?</header>
+            <h5>Who are you visiting with?</h5>
+
+            <v-checkbox
+                v-model="Iamalone"
+                class="mx-2"
+                label="I am alone"
+            ></v-checkbox>
+            <v-checkbox
+                v-model="Partner"
+                class="mx-2"
+                label="Partner"
+            ></v-checkbox>
+            <v-checkbox
+                v-model="Children"
+                class="mx-2"
+                label="Children"
+            ></v-checkbox>
         </v-col>
-        <v-checkbox
-            v-model="Iamalone"
-            class="mx-2"
-            label="I am alone"
-        ></v-checkbox>
-        <v-checkbox v-model="Partner" class="mx-2" label="Partner"></v-checkbox>
-        <v-checkbox
-            v-model="Children"
-            class="mx-2"
-            label="Children"
-        ></v-checkbox>
     </div>
 </template>
 
 <style lang="scss">
+h5 {
+    color: black;
+}
 .v-slider__thumb-label.primary {
     background-color: $orange;
     color: white;
@@ -51,7 +59,7 @@
 }
 
 .slider-flex {
-    padding-top: 30px;
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     justify-content: space-between;
@@ -61,8 +69,11 @@
     margin: 0 5px;
 }
 
-.mx-2 {
-    color: $orange;
+.v-label.theme--light {
+    color: black;
+}
+.v-input--selection-controls__ripple {
+    border: black;
 }
 </style>
 
