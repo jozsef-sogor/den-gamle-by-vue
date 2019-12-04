@@ -1,5 +1,6 @@
 <template>
     <div class="welcome">
+        <h1>Den Gamle By</h1>
         <div>
             <v-carousel :show-arrows="false">
                 <v-carousel-item
@@ -12,7 +13,7 @@
     </div>
 </template>
 
-<style lang="scss"></style>
+<style scoped lang="scss"></style>
 
 <script>
 export default {

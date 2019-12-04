@@ -1,4 +1,4 @@
-# den-gamle-by-vue
+# den-gamle-by-vue-2
 
 ## Project setup
 ```

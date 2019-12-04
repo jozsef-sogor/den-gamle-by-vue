@@ -1,5 +1,6 @@
 <template>
     <div class="preferences">
+        <h1>Preferences</h1>
         <v-container fluid>
             <v-row>
                 <v-col cols="12">
@@ -15,6 +16,8 @@
                             :value="[0, 1]"
                             min="1"
                             max="6"
+                            color="#e58c4f"
+                            track-color="#e58c4f75"
                         ></v-slider>
                         <p class="hour">6h</p>
                     </div>
@@ -44,7 +47,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 h5 {
     color: black;
 }
@@ -53,9 +56,6 @@ h5 {
     color: white;
     height: 40px;
     width: 40px;
-}
-.v-slider__thumb.primary {
-    color: $orange;
 }
 
 .slider-flex {
@@ -82,7 +82,8 @@ export default {
     data: () => ({
         Iamalone: false,
         Partner: false,
-        Children: false
+        Children: false,
+        slider: 1
     })
 };
 </script>

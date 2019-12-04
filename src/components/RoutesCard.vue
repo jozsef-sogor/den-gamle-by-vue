@@ -4,8 +4,7 @@
             class="white--text align-end"
             height="200px"
             src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-        >
-        </v-img>
+        ></v-img>
 
         <v-card-title>Top 10 Australian beaches</v-card-title>
         <div class="card-info">
@@ -24,7 +23,7 @@
     </v-card>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .routes-card {
     margin: auto;
 

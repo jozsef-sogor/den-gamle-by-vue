@@ -2,7 +2,7 @@
     <div class="task-card"></div>
 </template>
 
-<style lang="scss"></style>
+<style scoped lang="scss"></style>
 
 <script>
 export default {};

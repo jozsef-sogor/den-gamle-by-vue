@@ -1,10 +1,10 @@
 <template>
     <div class="information">
-        Information
+        <h1>Information</h1>
     </div>
 </template>
 
-<style lang="scss"></style>
+<style scoped lang="scss"></style>
 
 <script>
 export default {};

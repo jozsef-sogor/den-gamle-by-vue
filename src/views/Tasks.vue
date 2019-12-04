@@ -1,8 +1,10 @@
 <template>
-    <div class="tasks">Tasks</div>
+    <div class="tasks">
+        <h1>Tasks</h1>
+    </div>
 </template>
 
-<style lang="scss"></style>
+<style scoped lang="scss"></style>
 
 <script>
 export default {};
