@@ -4,19 +4,21 @@
     </div>
 </template>
 
-<style lang="scss">
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
 .heading {
-    font-size: 2rem;
-    border: 1px solid black;
-
     h1 {
+        color: $blue;
+        font-size: 4rem;
+        font-family: $heading-font;
         margin: 0;
+        text-align: center;
     }
 }
 </style>
 
 <script>
 export default {
-    name: 'head'
+    name: 'heading'
 };
 </script>
