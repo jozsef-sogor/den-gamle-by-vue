@@ -41,13 +41,13 @@
 
 <style lang="scss">
 .v-slider__thumb-label.primary {
-    background-color: orange;
+    background-color: $orange;
     color: white;
     height: 40px;
     width: 40px;
 }
 .v-slider__thumb.primary {
-    color: orange;
+    color: $orange;
 }
 
 .slider-flex {
@@ -62,7 +62,7 @@
 }
 
 .mx-2 {
-    color: orange;
+    color: $orange;
 }
 </style>
 
