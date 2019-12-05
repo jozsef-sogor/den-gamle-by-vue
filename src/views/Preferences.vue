@@ -67,17 +67,17 @@
 
                 <v-checkbox
                     v-model="Iamalone"
-                    class="mx-2"
+                    class="mx-2 black--text orange"
                     label="I am alone"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Partner"
-                    class="mx-2"
+                    class="mx-2 black--text orange"
                     label="Partner"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Children"
-                    class="mx-2"
+                    class="mx-2 black--text orange"
                     label="Children"
                 ></v-checkbox>
             </v-col>
