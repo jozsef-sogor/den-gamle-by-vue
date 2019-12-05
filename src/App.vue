@@ -18,6 +18,7 @@ body {
         font-size: 3rem;
         font-family: $heading-font;
         margin: 0;
+        padding-top: 20px;
         text-align: center;
     }
 
