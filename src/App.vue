@@ -9,12 +9,30 @@
 </template>
 
 <style lang="scss">
-h1 {
-    color: $blue;
-    font-size: 4rem;
-    font-family: $heading-font;
-    margin: 0;
-    text-align: center;
+body {
+    font-family: $body-font;
+    font-size: 18pt;
+    color: $text-color;
+
+    h1 {
+        color: $blue;
+        font-size: 2rem;
+        font-family: $heading-font;
+        margin: 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-family: $heading-font;
+        color: $blue;
+    }
+
+    h3 {
+        font-size: 1rem;
+        font-family: $body-font;
+        color: $text-color;
+    }
 }
 </style>
 
