@@ -57,11 +57,13 @@
 
 <style scoped lang="scss">
 .welcome {
+    background-image: url('https://i.redd.it/tolt40rquh011.jpg');
+    background-size: cover;
     .mx-auto {
         color: white;
         border: 3px solid $blue;
         border-radius: 15px;
-        margin: 50px 30px 30px 30px;
+        margin: 30px 30px 30px 30px;
     }
     .heading {
         margin-top: 20px;
@@ -72,6 +74,7 @@
     }
     .text {
         font-family: $body-font;
+        font-size: 16px;
         margin: 30px 30px 20px 30px;
         text-align: center;
     }
@@ -86,6 +89,11 @@
     .btn-container {
         display: flex;
         justify-content: space-around;
+    }
+    .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+        background-color: $orange;
+        color: white;
+        font-family: $heading-font;
     }
 }
 </style>
