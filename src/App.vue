@@ -1,6 +1,5 @@
 <template>
     <v-app>
-        <InformationPop />
         <v-content>
             <router-view />
         </v-content>
@@ -37,14 +36,12 @@ body {
 </style>
 
 <script>
-import InformationPop from './components/InformationPop.vue';
 import Navbar from './components/Navbar.vue';
 export default {
     name: 'App',
 
     components: {
-        Navbar,
-        InformationPop
+        Navbar
     }
 };
 </script>
