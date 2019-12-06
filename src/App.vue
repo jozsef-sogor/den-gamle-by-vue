@@ -15,7 +15,7 @@ body {
 
     h1 {
         color: $blue;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-family: $heading-font;
         margin: 0;
         padding-top: 20px;
