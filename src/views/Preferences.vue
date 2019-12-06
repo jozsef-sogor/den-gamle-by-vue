@@ -29,7 +29,6 @@
             <h3>
                 Which one do you prefer?
             </h3>
-
             <v-item-group multiple>
                 <v-row>
                     <v-col
@@ -82,11 +81,20 @@
                 ></v-checkbox>
             </v-col>
         </v-container>
+        <router-link to="/map">
+            <v-row class="btn-container" align="center">
+                <div class="btn-intro">
+                    <v-btn large>CONTINUE</v-btn>
+                </div>
+            </v-row>
+        </router-link>
     </div>
 </template>
 
 <style scoped lang="scss">
 .preferences {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h5 {
@@ -143,14 +151,25 @@ h5 {
         caret-color: $orange !important;
     }
     .container-border {
-        max-width: 80%;
-        margin: 15px 5px;
+        margin: 15px 0px;
         border-style: solid;
         border-radius: 15px;
         border-width: 3px;
         border-color: $blue;
         box-shadow: 5px 5px 15px rgba(163, 163, 163, 0.575);
     }
+}
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: $orange;
+    color: white;
+    font-family: $heading-font;
 }
 
 .show-btns {
