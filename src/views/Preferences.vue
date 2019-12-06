@@ -96,8 +96,7 @@
 
 <style scoped lang="scss">
 .preferences {
-    margin-left: auto;
-    margin-right: auto;
+    border: 0px 16px;
 }
 
 h5 {
