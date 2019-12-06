@@ -15,17 +15,20 @@ body {
 
     h1 {
         color: $blue;
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-family: $heading-font;
         margin: 0;
         padding-top: 20px;
         text-align: center;
+        line-height: 1;
+        font-weight: 400;
     }
 
     h2 {
         font-size: 2rem;
         font-family: $heading-font;
         color: $blue;
+        font-weight: 400;
     }
 
     h3 {
