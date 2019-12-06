@@ -13,8 +13,9 @@
                             v-for="(item, i) in items"
                             :key="i"
                             :src="item.src"
+                            height="300"
                         >
-                            <v-sheet height="100%">
+                            <v-sheet height="100%" class="guide">
                                 <v-col>
                                     <v-row
                                         class="fill-height"
@@ -31,13 +32,11 @@
                                             {{ item.txt }}
                                         </div>
                                     </v-row>
-                                    <v-row
-                                        class="btn-container"
-                                        align="center"
-                                        v-model="btnActive"
-                                    >
+                                    <v-row class="btn-container" align="center">
                                         <div class="btn-intro">
-                                            <v-btn large>START</v-btn>
+                                            <v-btn large v-if="i === 2">
+                                                START
+                                            </v-btn>
                                         </div>
                                     </v-row>
                                 </v-col>
@@ -59,17 +58,21 @@
 .welcome {
     background-image: url('../assets/img/dengamleby.jpg');
     background-size: cover;
+    overflow: hidden;
     .mx-auto {
         color: white;
         border: 3px solid $blue;
         border-radius: 15px;
         margin: 30px 30px 30px 30px;
     }
+    .guide {
+        overflow: hidden;
+    }
     .heading {
         margin-top: 20px;
         margin-bottom: 30px;
         font-family: $heading-font;
-        font-size: 50px;
+        font-size: 30px;
         color: $blue;
     }
     .text {
@@ -83,8 +86,8 @@
         border: 3px solid $blue;
         margin-left: auto;
         margin-right: auto;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     .btn-container {
         display: flex;
@@ -102,7 +105,6 @@
 export default {
     data() {
         return {
-            btnActive: true,
             items: [
                 {
                     txt:
