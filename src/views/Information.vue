@@ -15,7 +15,10 @@
                         <h2>1864 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        <p>Backery</p>
+                        <p>
+                            <v-icon>mdi-silverware-fork-knife</v-icon>
+                            Backery
+                        </p>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
@@ -23,7 +26,10 @@
                         <h2>1927 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        Restaurant
+                        <p>
+                            <v-icon>mdi-silverware-fork-knife</v-icon>
+                            Restaurant
+                        </p>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
@@ -31,7 +37,10 @@
                         <h2>1974 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        Bar
+                        <p>
+                            <v-icon>mdi-silverware-fork-knife</v-icon>
+                            Bar
+                        </p>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -45,15 +54,15 @@
 
     .icons {
         padding-top: 20px;
+
+        .mdi-silverware-fork-knife::before {
+            color: $orange;
+        }
     }
 
     .expansion-panel {
         padding-top: 30px;
     }
-}
-
-.mdi-silverware-fork-knife::before {
-    color: $orange;
 }
 
 .theme--light.v-expansion-panels .v-expansion-panel {
