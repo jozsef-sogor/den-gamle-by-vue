@@ -1,11 +1,145 @@
 <template>
     <div class="tasks">
+        <v-icon x-large class="orange-color">mdi-arrow-left-circle</v-icon>
         <h1>Tasks</h1>
+        <div class="progress">
+            <v-progress-linear
+                v-model="knowledge"
+                height="20"
+                reactive
+                color="#e58c4f"
+                track-color="#e58c4f75"
+            >
+                <h3>{{ Math.ceil(knowledge) }}/{{ done }}</h3>
+            </v-progress-linear>
+        </div>
+        <div class="expansion-panel">
+            <v-expansion-panels class="mb-6">
+                <v-expansion-panel>
+                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                        Question 1
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <p>Question number 1</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+                <v-expansion-panel>
+                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                        Question 2
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <p>Question number 2</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+                <v-expansion-panel>
+                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                        Question 3
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        <p>Question number 3</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
+        </div>
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.tasks {
+    padding: 0px 16px;
+}
+.v-application .accent--text {
+    color: $orange !important;
+    caret-color: $orange !important;
+}
+.progress {
+    margin: 20px 10px;
+}
+.v-input--selection-controls {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+.v-input--selection-controls:not(.v-input--hide-details) .v-input__slot {
+    margin-bottom: 0px !important;
+}
+.v-input__slot {
+    margin-bottom: 0px !important;
+}
+.orange-color {
+    color: $orange;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+}
+.theme--light.v-expansion-panels .v-expansion-panel {
+    margin-bottom: 35px;
+}
+
+.v-application--is-ltr .v-expansion-panel-header {
+    border: 3px solid $blue;
+    border-radius: 10px;
+}
+
+.v-expansion-panel-content__wrap {
+    border: 3px solid $blue;
+}
+.v-expansion-panel {
+    border-radius: 10px;
+}
+</style>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            knowledge: 25,
+            done: 10
+        };
+    }
+};
 </script>
