@@ -32,7 +32,10 @@
                                             {{ item.txt }}
                                         </div>
                                     </v-row>
-                                    <router-link to="/preferences">
+                                    <router-link
+                                        to="/preferences"
+                                        class="decoration"
+                                    >
                                         <v-row
                                             class="btn-container"
                                             align="center"
@@ -105,6 +108,9 @@
         background-color: $orange;
         color: white;
         font-family: $heading-font;
+    }
+    .decoration {
+        text-decoration: none;
     }
 }
 </style>

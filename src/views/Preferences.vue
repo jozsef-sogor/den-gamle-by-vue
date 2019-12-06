@@ -81,7 +81,7 @@
                 ></v-checkbox>
             </v-col>
         </v-container>
-        <router-link to="/map">
+        <router-link to="/map" class="decoration">
             <v-row class="btn-container" align="center">
                 <div class="btn-intro">
                     <v-btn large>CONTINUE</v-btn>
@@ -171,7 +171,9 @@ h5 {
     color: white;
     font-family: $heading-font;
 }
-
+.decoration {
+    text-decoration: none;
+}
 .show-btns {
     color: rgba(255, 255, 255, 1);
 }

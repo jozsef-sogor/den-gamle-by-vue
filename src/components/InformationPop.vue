@@ -8,9 +8,11 @@
         <template v-if="filteredHouse">
             <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
             <div class="textHouse">{{ filteredHouse.description }}</div>
-            <v-btn block class="btnQuiz">
-                Take a quiz
-            </v-btn>
+            <router-link to="/tasks" class="decoration">
+                <v-btn block class="btnQuiz">
+                    Take a quiz
+                </v-btn>
+            </router-link>
         </template>
     </div>
 </template>
@@ -38,6 +40,9 @@
         background-color: $orange;
         color: white;
         font-family: $heading-font;
+    }
+    .decoration {
+        text-decoration: none;
     }
 }
 </style>
