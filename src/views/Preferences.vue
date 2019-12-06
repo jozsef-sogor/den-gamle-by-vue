@@ -67,17 +67,17 @@
 
                 <v-checkbox
                     v-model="Iamalone"
-                    class="mx-2 black--text orange"
+                    class="mx-2 black--text"
                     label="I am alone"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Partner"
-                    class="mx-2 black--text orange"
+                    class="mx-2 black--text"
                     label="Partner"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Children"
-                    class="mx-2 black--text orange"
+                    class="mx-2 black--text"
                     label="Children"
                 ></v-checkbox>
             </v-col>
@@ -86,6 +86,9 @@
 </template>
 
 <style scoped lang="scss">
+.preferences {
+}
+
 h5 {
     color: black;
 }
