@@ -1,6 +1,8 @@
 <template>
     <div class="tasks">
-        <v-icon x-large class="orange-color">mdi-arrow-left-circle</v-icon>
+        <router-link to="/map" class="decoration">
+            <v-icon x-large class="orange-color">mdi-arrow-left-circle</v-icon>
+        </router-link>
         <h1>Tasks</h1>
         <div class="progress">
             <v-progress-linear
@@ -12,6 +14,7 @@
             >
                 <h3>{{ Math.ceil(knowledge) }}/{{ done }}</h3>
             </v-progress-linear>
+            <v-img src="../assets/img/gift.png"></v-img>
         </div>
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
@@ -122,7 +125,7 @@
 .orange-color {
     color: $orange;
     position: absolute;
-    top: 35px;
+    top: 20px;
     left: 10px;
 }
 .theme--light.v-expansion-panels .v-expansion-panel {
