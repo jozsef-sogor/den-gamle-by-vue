@@ -9,6 +9,7 @@
                 :key="index"
                 v-for="(m, index) in houses"
                 :position="{ lat: m.lat, lng: m.lng }"
+                :description="m.description"
                 @click="putData"
             ></gmap-marker>
         </gmap-map>
@@ -60,7 +61,7 @@ export default {
             });
         },
         putData() {
-            console.log(this.position);
+            console.log(this.$attrs.description);
         }
     }
 };
