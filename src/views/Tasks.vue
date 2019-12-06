@@ -107,6 +107,9 @@
 .v-input--selection-controls:not(.v-input--hide-details) .v-input__slot {
     margin-bottom: 0px !important;
 }
+.v-input__slot {
+    margin-bottom: 0px !important;
+}
 .orange-color {
     color: $orange;
     position: absolute;
