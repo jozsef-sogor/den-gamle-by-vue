@@ -11,7 +11,7 @@
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
                 <v-expansion-panel>
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                    <v-expansion-panel-header>
                         <h2>1864 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
@@ -22,7 +22,7 @@
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                    <v-expansion-panel-header>
                         <h2>1927 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
@@ -33,7 +33,7 @@
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
+                    <v-expansion-panel-header>
                         <h2>1974 zone</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
