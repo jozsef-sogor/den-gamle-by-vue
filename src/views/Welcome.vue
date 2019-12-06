@@ -1,6 +1,9 @@
 <template>
     <div class="welcome">
-        <h1>Den Gamle By</h1>
+        <div class="title">
+            <h1>Den Gamle By</h1>
+        </div>
+
         <div>
             <template>
                 <v-card elevation="24" max-width="400" class="mx-auto">
@@ -69,6 +72,19 @@
     background-image: url('../assets/img/dengamleby.jpg');
     background-size: cover;
     overflow: hidden;
+    padding: 40px 0;
+
+    .title {
+        background-color: $blue;
+        background: linear-gradient(0, #001638 0%, #002c70 100%);
+        padding: 25px 0;
+
+        h1 {
+            color: white;
+            padding: 0;
+        }
+    }
+
     .mx-auto {
         color: white;
         border: 3px solid $blue;
