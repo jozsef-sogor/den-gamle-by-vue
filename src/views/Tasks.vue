@@ -14,13 +14,13 @@
             >
                 <h3>{{ Math.ceil(knowledge) }}/{{ done }}</h3>
             </v-progress-linear>
-            <v-img src="../assets/img/gift.png"></v-img>
+            <v-img class="" src="../assets/img/gift.png"></v-img>
         </div>
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
                 <v-expansion-panel>
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        Question 1
+                        <h2>Question 1</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <p>Question number 1</p>
