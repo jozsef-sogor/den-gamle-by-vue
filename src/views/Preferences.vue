@@ -82,11 +82,17 @@
                 ></v-checkbox>
             </v-col>
         </v-container>
+        <div class="my-2">
+            <v-btn color="error" dark large>Large Button</v-btn>
+          </div>
+          <div class="my-2">
     </div>
 </template>
 
 <style scoped lang="scss">
 .preferences {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h5 {
@@ -143,8 +149,7 @@ h5 {
         caret-color: $orange !important;
     }
     .container-border {
-        max-width: 80%;
-        margin: 15px 5px;
+        margin: 15px 0px;
         border-style: solid;
         border-radius: 15px;
         border-width: 3px;
