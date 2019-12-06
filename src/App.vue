@@ -24,7 +24,7 @@ body {
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-family: $heading-font;
         color: $blue;
     }
