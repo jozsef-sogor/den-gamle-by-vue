@@ -84,8 +84,8 @@
         </v-container>
         <div class="my-2">
             <v-btn color="error" dark large>Large Button</v-btn>
-          </div>
-          <div class="my-2">
+        </div>
+        <div class="my-2"></div>
     </div>
 </template>
 
