@@ -29,7 +29,6 @@
             <h3>
                 Which one do you prefer?
             </h3>
-
             <v-item-group multiple>
                 <v-row>
                     <v-col
@@ -82,10 +81,13 @@
                 ></v-checkbox>
             </v-col>
         </v-container>
-        <div class="my-2">
-            <v-btn color="error" dark large>Large Button</v-btn>
-        </div>
-        <div class="my-2"></div>
+        <router-link to="/map">
+            <v-row class="btn-container" align="center">
+                <div class="btn-intro">
+                    <v-btn large>CONTINUE</v-btn>
+                </div>
+            </v-row>
+        </router-link>
     </div>
 </template>
 
@@ -156,6 +158,18 @@ h5 {
         border-color: $blue;
         box-shadow: 5px 5px 15px rgba(163, 163, 163, 0.575);
     }
+}
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: $orange;
+    color: white;
+    font-family: $heading-font;
 }
 
 .show-btns {

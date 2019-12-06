@@ -32,23 +32,30 @@
                                             {{ item.txt }}
                                         </div>
                                     </v-row>
-                                    <v-row class="btn-container" align="center">
-                                        <div class="btn-intro">
-                                            <v-btn large v-if="i === 2">
-                                                START
-                                            </v-btn>
-                                        </div>
-                                    </v-row>
+                                    <router-link to="/preferences">
+                                        <v-row
+                                            class="btn-container"
+                                            align="center"
+                                        >
+                                            <div class="btn-intro">
+                                                <v-btn large v-if="i === 2">
+                                                    START
+                                                </v-btn>
+                                            </div>
+                                        </v-row>
+                                    </router-link>
                                 </v-col>
                             </v-sheet>
                         </v-carousel-item>
                     </v-carousel>
                 </v-card>
-                <v-row class="btn-container" align="center">
-                    <div class="btn-intro">
-                        <v-btn large>SKIP</v-btn>
-                    </div>
-                </v-row>
+                <router-link to="/preferences">
+                    <v-row class="btn-container" align="center">
+                        <div class="btn-intro">
+                            <v-btn large>SKIP</v-btn>
+                        </div>
+                    </v-row>
+                </router-link>
             </template>
         </div>
     </div>
@@ -92,6 +99,7 @@
     .btn-container {
         display: flex;
         justify-content: space-around;
+        margin: 5px;
     }
     .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
         background-color: $orange;
