@@ -49,6 +49,23 @@
         padding-top: 80px;
     }
 }
+
+.mdi-silverware-fork-knife::before {
+    color: $orange;
+}
+
+.theme--light.v-expansion-panels .v-expansion-panel {
+    margin-bottom: 35px;
+}
+
+.v-application--is-ltr .v-expansion-panel-header {
+    border: 3px solid $blue;
+    border-radius: 10px;
+}
+
+.v-expansion-panel-content__wrap {
+    border: 3px solid $blue;
+}
 </style>
 
 <script>
