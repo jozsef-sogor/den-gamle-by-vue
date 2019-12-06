@@ -16,7 +16,6 @@
                             v-for="(item, i) in items"
                             :key="i"
                             :src="item.src"
-                            height="300"
                         >
                             <v-sheet height="100%" class="guide">
                                 <v-col>
@@ -35,6 +34,7 @@
                                             {{ item.txt }}
                                         </div>
                                     </v-row>
+
                                     <router-link
                                         to="/preferences"
                                         class="decoration"
@@ -50,18 +50,28 @@
                                             </div>
                                         </v-row>
                                     </router-link>
+                                    <v-row
+                                        class="btn-container"
+                                        d-flex
+                                        justify-space-between
+                                    >
+                                        <router-link to="/preferences">
+                                            <v-btn
+                                                large
+                                                v-if="i === 0 || i === 1"
+                                            >
+                                                SKIP
+                                            </v-btn>
+                                        </router-link>
+                                        <v-btn large v-if="i === 0 || i === 1">
+                                            NEXT
+                                        </v-btn>
+                                    </v-row>
                                 </v-col>
                             </v-sheet>
                         </v-carousel-item>
                     </v-carousel>
                 </v-card>
-                <router-link to="/preferences">
-                    <v-row class="btn-container" align="center">
-                        <div class="btn-intro">
-                            <v-btn large>SKIP</v-btn>
-                        </div>
-                    </v-row>
-                </router-link>
             </template>
         </div>
     </div>
@@ -73,11 +83,15 @@
     background-size: cover;
     overflow: hidden;
     padding: 40px 16px;
+    height: 100%;
 
     .title {
         background-color: $blue;
         background: linear-gradient(0, #001638 0%, #002c70 100%);
         padding: 25px 0;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
 
         h1 {
             color: white;
@@ -89,7 +103,7 @@
         color: white;
         border: 3px solid $blue;
         border-radius: 15px;
-        margin: 30px 30px 30px 30px;
+        margin: 30px 0 0 0;
     }
     .guide {
         overflow: hidden;
@@ -134,6 +148,14 @@
     a {
         text-decoration: none !important;
     }
+}
+
+.v-card:not(.v-sheet--tile):not(.v-card--shaped) {
+    border-radius: 15px;
+}
+
+.v-card > *:last-child:not(.v-btn):not(.v-chip) {
+    max-height: 460px;
 }
 </style>
 
