@@ -68,16 +68,19 @@
                     v-model="Iamalone"
                     class="mx-2 black--text"
                     label="I am alone"
+                    color="#e58c4f"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Partner"
                     class="mx-2 black--text"
                     label="Partner"
+                    color="#e58c4f"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="Children"
                     class="mx-2 black--text"
                     label="Children"
+                    color="#e58c4f"
                 ></v-checkbox>
             </v-col>
         </v-container>
