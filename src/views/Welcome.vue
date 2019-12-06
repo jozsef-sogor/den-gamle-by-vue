@@ -57,7 +57,7 @@
 
 <style scoped lang="scss">
 .welcome {
-    background-image: url('https://i.redd.it/tolt40rquh011.jpg');
+    background-image: url('../assets/img/dengamleby.jpg');
     background-size: cover;
     .mx-auto {
         color: white;

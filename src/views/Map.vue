@@ -1,9 +1,16 @@
 <template>
-    <div class="map">Map</div>
+    <div id="app">
+        <google-map />
+    </div>
 </template>
 
-<style scoped lang="scss"></style>
-
 <script>
-export default {};
+import googleMap from '../components/googleMap';
+
+export default {
+    name: 'App',
+    components: {
+        googleMap
+    }
+};
 </script>

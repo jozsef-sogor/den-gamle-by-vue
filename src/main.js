@@ -5,9 +5,17 @@ import router from './router';
 import vuetify from './plugins/vuetify';
 import { firestorePlugin } from 'vuefire';
 import { db } from './db';
+import VueGeolocation from 'vue-browser-geolocation';
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.use(firestorePlugin);
 Vue.config.productionTip = false;
+Vue.use(VueGeolocation);
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyA3bB16-ieel0BRSzYUmRwqS7gYzXkFkJk'
+    }
+});
 
 new Vue({
     router,
