@@ -20,6 +20,7 @@ body {
         margin: 0;
         padding-top: 20px;
         text-align: center;
+        line-height: 1;
     }
 
     h2 {
