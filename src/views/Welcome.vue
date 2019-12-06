@@ -72,7 +72,7 @@
     background-image: url('../assets/img/dengamleby.jpg');
     background-size: cover;
     overflow: hidden;
-    padding: 40px 0;
+    padding: 40px 16px;
 
     .title {
         background-color: $blue;
@@ -95,8 +95,8 @@
         overflow: hidden;
     }
     .heading {
-        margin-top: 20px;
-        margin-bottom: 30px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         font-family: $heading-font;
         font-size: 30px;
         color: $blue;
@@ -127,6 +127,12 @@
     }
     .decoration {
         text-decoration: none;
+    }
+}
+
+.v-application {
+    a {
+        text-decoration: none !important;
     }
 }
 </style>
