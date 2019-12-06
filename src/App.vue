@@ -11,7 +11,7 @@
 <style lang="scss">
 body {
     font-family: $body-font;
-    font-size: 18pt;
+    font-size: 18px;
     color: $text-color;
 
     h1 {
