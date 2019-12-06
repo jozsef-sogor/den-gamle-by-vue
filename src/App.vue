@@ -21,12 +21,14 @@ body {
         padding-top: 20px;
         text-align: center;
         line-height: 1;
+        font-weight: 400;
     }
 
     h2 {
         font-size: 2rem;
         font-family: $heading-font;
         color: $blue;
+        font-weight: 400;
     }
 
     h3 {
