@@ -10,15 +10,31 @@
                 v-for="(m, index) in houses"
                 :position="{ lat: m.lat, lng: m.lng }"
                 :description="m.description"
-                @click="putData"
+                :title="m.title"
+                :year="m.year"
+                :task="m.task"
+                :id="m.id"
+                @click="putData(m.description, m.title, m.id)"
             ></gmap-marker>
         </gmap-map>
     </div>
 </template>
 
+<style lang="scss">
+.vue-map-container {
+    z-index: -1;
+    position: initial;
+}
+.information-pop {
+    z-index: 999;
+    position: fixed;
+}
+</style>
+
 <script>
 export default {
     name: 'googleMap',
+    components: {},
     data() {
         return {
             houses: this.$root.houses,
@@ -60,8 +76,8 @@ export default {
                 };
             });
         },
-        putData() {
-            console.log(this.$attrs.description);
+        putData(description, title, id) {
+            console.log(description + title + id);
         }
     }
 };
