@@ -17,26 +17,71 @@
             <v-expansion-panels class="mb-6">
                 <v-expansion-panel>
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        1864 zone
+                        Question 1
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        Backery
+                        <p>Question number 1</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        1927 zone
+                        Question 2
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        Restaurant
+                        <p>Question number 2</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
                 <v-expansion-panel>
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        1974 zone
+                        Question 3
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        Bar
+                        <p>Question number 3</p>
+                        <v-checkbox
+                            v-model="Iamalone"
+                            class="mx-2 black--text"
+                            label="I am alone"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Partner"
+                            class="mx-2 black--text"
+                            label="Partner"
+                        ></v-checkbox>
+                        <v-checkbox
+                            v-model="Children"
+                            class="mx-2 black--text"
+                            label="Children"
+                        ></v-checkbox>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -45,16 +90,43 @@
 </template>
 
 <style scoped lang="scss">
+.tasks {
+    padding: 0px 16px;
+}
+.v-application .accent--text {
+    color: $orange !important;
+    caret-color: $orange !important;
+}
 .progress {
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-right: 10px;
+    margin: 20px 10px;
+}
+.v-input--selection-controls {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+.v-input--selection-controls:not(.v-input--hide-details) .v-input__slot {
+    margin-bottom: 0px !important;
 }
 .orange-color {
     color: $orange;
     position: absolute;
     top: 35px;
     left: 10px;
+}
+.theme--light.v-expansion-panels .v-expansion-panel {
+    margin-bottom: 35px;
+}
+
+.v-application--is-ltr .v-expansion-panel-header {
+    border: 3px solid $blue;
+    border-radius: 10px;
+}
+
+.v-expansion-panel-content__wrap {
+    border: 3px solid $blue;
+}
+.v-expansion-panel {
+    border-radius: 10px;
 }
 </style>
 
