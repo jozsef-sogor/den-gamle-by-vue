@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <information-pop />
+        <information-pop :houseId="childData" />
 
-        <google-map />
+        <google-map @pin-clicked="infoPop" />
     </div>
 </template>
 
@@ -15,6 +15,17 @@ export default {
     components: {
         googleMap,
         InformationPop
+    },
+    data: function() {
+        return {
+            childData: ''
+        };
+    },
+    methods: {
+        infoPop(id) {
+            console.log(id);
+            this.childData = id;
+        }
     }
 };
 </script>
