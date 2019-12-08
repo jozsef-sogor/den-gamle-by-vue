@@ -35,23 +35,6 @@
                                             {{ item.txt }}
                                         </div>
                                     </v-row>
-
-                                    <router-link
-                                        to="/preferences"
-                                        class="decoration"
-                                        v-if="slideNumber === 2"
-                                    >
-                                        <v-row
-                                            class="btn-container"
-                                            align="center"
-                                        >
-                                            <div class="btn-intro">
-                                                <v-btn large>
-                                                    START
-                                                </v-btn>
-                                            </div>
-                                        </v-row>
-                                    </router-link>
                                     <v-row
                                         class="btn-container"
                                         d-flex
@@ -68,7 +51,10 @@
                                         <v-btn
                                             @click="activeSlide--"
                                             large
-                                            v-if="slideNumber === 1"
+                                            v-if="
+                                                slideNumber === 1 ||
+                                                    slideNumber === 2
+                                            "
                                         >
                                             BACK
                                         </v-btn>
@@ -82,6 +68,14 @@
                                         >
                                             NEXT
                                         </v-btn>
+                                        <router-link
+                                            to="/preferences"
+                                            v-if="slideNumber === 2"
+                                        >
+                                            <v-btn large>
+                                                START
+                                            </v-btn>
+                                        </router-link>
                                     </v-row>
                                 </v-col>
                             </v-sheet>
