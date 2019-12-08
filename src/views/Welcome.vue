@@ -8,13 +8,14 @@
             <template>
                 <v-card elevation="24" max-width="400" class="mx-auto">
                     <v-carousel
+                        v-model="activeSlide"
                         :show-arrows="false"
                         hide-delimiter-background
                         light
                     >
                         <v-carousel-item
-                            v-for="(item, i) in items"
-                            :key="i"
+                            v-for="(item, slideNumber) in items"
+                            :key="slideNumber"
                             :src="item.src"
                         >
                             <v-sheet height="100%" class="guide">
@@ -38,13 +39,14 @@
                                     <router-link
                                         to="/preferences"
                                         class="decoration"
+                                        v-if="slideNumber === 2"
                                     >
                                         <v-row
                                             class="btn-container"
                                             align="center"
                                         >
                                             <div class="btn-intro">
-                                                <v-btn large v-if="i === 2">
+                                                <v-btn large>
                                                     START
                                                 </v-btn>
                                             </div>
@@ -55,15 +57,29 @@
                                         d-flex
                                         justify-space-between
                                     >
-                                        <router-link to="/preferences">
-                                            <v-btn
-                                                large
-                                                v-if="i === 0 || i === 1"
-                                            >
+                                        <router-link
+                                            to="/preferences"
+                                            v-if="slideNumber === 0"
+                                        >
+                                            <v-btn large>
                                                 SKIP
                                             </v-btn>
                                         </router-link>
-                                        <v-btn large v-if="i === 0 || i === 1">
+                                        <v-btn
+                                            @click="activeSlide--"
+                                            large
+                                            v-if="slideNumber === 1"
+                                        >
+                                            BACK
+                                        </v-btn>
+                                        <v-btn
+                                            @click="activeSlide++"
+                                            large
+                                            v-if="
+                                                slideNumber === 0 ||
+                                                    slideNumber === 1
+                                            "
+                                        >
                                             NEXT
                                         </v-btn>
                                     </v-row>
@@ -180,7 +196,8 @@ export default {
                         'Complete the tasks that will appear in the different attractions and if you answer right, a reward will wait for you.',
                     src: 'https://i.redd.it/tolt40rquh011.jpg'
                 }
-            ]
+            ],
+            activeSlide: 0
         };
     }
 };

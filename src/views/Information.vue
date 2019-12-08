@@ -8,6 +8,7 @@
 
             <v-icon x-large>mdi-home</v-icon>
         </v-row>
+
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
                 <v-expansion-panel>
