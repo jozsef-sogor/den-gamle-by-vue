@@ -1,8 +1,12 @@
 <template>
     <div id="app">
-        <information-pop :houseId="childData" />
+        <information-pop
+            :houseId="childData"
+            v-if="childData"
+            @close-clicked="closePopUp"
+        />
 
-        <google-map @pin-clicked="infoPop" />
+        <google-map @pin-clicked="openPopUp" />
     </div>
 </template>
 
@@ -22,9 +26,12 @@ export default {
         };
     },
     methods: {
-        infoPop(id) {
+        openPopUp(id) {
             console.log(id);
             this.childData = id;
+        },
+        closePopUp() {
+            this.childData = '';
         }
     }
 };
