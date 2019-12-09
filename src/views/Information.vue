@@ -11,36 +11,17 @@
 
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
-                <v-expansion-panel>
+                <v-expansion-panel
+                    v-for="zone of zones"
+                    v-bind:key="zone.title"
+                >
                     <v-expansion-panel-header>
-                        <h2>1864 zone</h2>
+                        <h2>{{ zone.title }}</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <p>
                             <v-icon>mdi-silverware-fork-knife</v-icon>
-                            Backery
-                        </p>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <h2>1927 zone</h2>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <p>
-                            <v-icon>mdi-silverware-fork-knife</v-icon>
-                            Restaurant
-                        </p>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                <v-expansion-panel>
-                    <v-expansion-panel-header>
-                        <h2>1974 zone</h2>
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <p>
-                            <v-icon>mdi-silverware-fork-knife</v-icon>
-                            Bar
+                            {{ zone.content }}
                         </p>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -107,5 +88,24 @@
 </style>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            zones: [
+                {
+                    title: '1864 zone',
+                    content: 'Backery'
+                },
+                {
+                    title: '1927 zone',
+                    content: 'Restaurant'
+                },
+                {
+                    title: '1974 zone',
+                    content: 'Bar'
+                }
+            ]
+        };
+    }
+};
 </script>
