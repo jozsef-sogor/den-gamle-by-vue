@@ -12,7 +12,7 @@
             ></gmap-marker>
             <gmap-marker
                 :key="index"
-                v-for="(m, index) in houses"
+                v-for="(m, index) in routeHouses"
                 :position="{ lat: m.lat, lng: m.lng }"
                 :description="m.description"
                 :title="m.title"
@@ -55,6 +55,24 @@ export default {
             currentPlace: null,
             userPos: this.$root.userPos
         };
+    },
+
+    computed: {
+        routeHouses() {
+            const houseIds = this.$root.selectedRoute
+                ? this.$root.selectedRoute.houses
+                : [];
+
+            console.log(houseIds);
+            const filteredHouses = this.$root.houses.filter(house =>
+                houseIds.some(houseId => {
+                    console.log(house.id);
+                    return houseId === house.id;
+                })
+            );
+            console.log(filteredHouses);
+            return filteredHouses;
+        }
     },
 
     mounted() {

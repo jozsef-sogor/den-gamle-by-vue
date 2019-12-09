@@ -29,7 +29,7 @@ new Vue({
             children: false,
             availableTime: 1,
             selectedCenturies: [0],
-            selectedRoute: ''
+            selectedRoute: null
             // overlay: false
         };
     },

@@ -20,7 +20,7 @@
                         large
                         class="btn-start"
                         text
-                        @click="selectRoute(route.id)"
+                        @click="selectRoute(route)"
                     >
                         Start
                     </v-btn>
@@ -62,8 +62,8 @@ export default {
         route: Object
     },
     methods: {
-        selectRoute(id) {
-            this.$root.selectedRoute = id;
+        selectRoute(route) {
+            this.$root.selectedRoute = route;
         }
     }
 };
