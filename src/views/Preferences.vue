@@ -13,12 +13,14 @@
                             v-model="$root.availableTime"
                             thumb-label="always"
                             :thumb-size="40"
-                            :value="[0, 1]"
+                            :value="1"
                             min="1"
                             max="6"
                             color="#e58c4f"
                             track-color="#e58c4f75"
-                        ></v-slider>
+                        >
+                            >
+                        </v-slider>
                         <p class="hour">6h</p>
                     </div>
                 </v-col>
@@ -38,7 +40,10 @@
                         md="1"
                         class="d-flex align-center flex-row"
                     >
-                        <v-item v-slot:default="{ active, toggle }">
+                        <v-item
+                            v-slot:default="{ active, toggle }"
+                            @click="setActive"
+                        >
                             <v-card
                                 :color="active ? 'primary' : ''"
                                 class="flex-grow-1 text-center img-bck"
@@ -96,7 +101,7 @@
 
 <style scoped lang="scss">
 .preferences {
-    border: 0px 16px;
+    padding: 0px 16px;
 }
 
 h5 {
