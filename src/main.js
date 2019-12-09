@@ -35,7 +35,10 @@ new Vue({
     },
     firestore: {
         houses: db.collection('HousesInformation'),
+ user-position
+        userPos: db.collection('userPos')
         routes: db.collection('Routes')
+ master
     }
     // watch: {
     //     overlay(val) {
