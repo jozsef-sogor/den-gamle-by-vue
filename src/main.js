@@ -29,7 +29,10 @@ new Vue({
             children: false,
             availableTime: 1,
             selectedCenturies: [0],
-            selectedRoute: null
+            selectedRoute: null,
+            userLocation: { lat: '', lng: '' },
+            center: { lat: 45.508, lng: -73.587 }
+
             // overlay: false
         };
     },
