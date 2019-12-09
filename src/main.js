@@ -23,10 +23,25 @@ new Vue({
     render: h => h(App),
     data() {
         return {
-            houses: []
+            houses: [],
+            iamalone: false,
+            partner: false,
+            children: false,
+            availableTime: 1,
+            selectedCenturies: [0]
+            // overlay: false
         };
     },
     firestore: {
-        houses: db.collection('HousesInformation')
+        houses: db.collection('HousesInformation'),
+        routes: db.collection('Routes')
     }
+    // watch: {
+    //     overlay(val) {
+    //         val &&
+    //             setTimeout(() => {
+    //                 this.overlay = false;
+    //             }, 3000);
+    //     }
+    // }
 }).$mount('#app');
