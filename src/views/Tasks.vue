@@ -49,58 +49,6 @@
                         ></v-checkbox>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
-                <v-expansion-panel>
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        Question 2
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <p>Question number 2</p>
-                        <v-checkbox
-                            v-model="Iamalone"
-                            class="mx-2 black--text"
-                            label="I am alone"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Partner"
-                            class="mx-2 black--text"
-                            label="Partner"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Children"
-                            class="mx-2 black--text"
-                            label="Children"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
-                <v-expansion-panel>
-                    <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        Question 3
-                    </v-expansion-panel-header>
-                    <v-expansion-panel-content>
-                        <p>Question number 3</p>
-                        <v-checkbox
-                            v-model="Iamalone"
-                            class="mx-2 black--text"
-                            label="I am alone"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Partner"
-                            class="mx-2 black--text"
-                            label="Partner"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Children"
-                            class="mx-2 black--text"
-                            label="Children"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                    </v-expansion-panel-content>
-                </v-expansion-panel>
             </v-expansion-panels>
         </div>
     </div>
