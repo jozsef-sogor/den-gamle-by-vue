@@ -13,12 +13,14 @@
                             v-model="slider"
                             thumb-label="always"
                             :thumb-size="40"
-                            :value="[0, 1]"
+                            :value="1"
                             min="1"
                             max="6"
                             color="#e58c4f"
                             track-color="#e58c4f75"
-                        ></v-slider>
+                        >
+                            >
+                        </v-slider>
                         <p class="hour">6h</p>
                     </div>
                 </v-col>
@@ -33,12 +35,15 @@
                 <v-row>
                     <v-col
                         v-for="item in items"
-                        :key="item"
+                        :key="item.title"
                         cols="6"
                         md="1"
                         class="d-flex align-center flex-row"
                     >
-                        <v-item v-slot:default="{ active, toggle }">
+                        <v-item
+                            v-slot:default="{ active, toggle }"
+                            @click="setActive"
+                        >
                             <v-card
                                 :color="active ? 'primary' : ''"
                                 class="flex-grow-1 text-center img-bck"
@@ -96,7 +101,7 @@
 
 <style scoped lang="scss">
 .preferences {
-    border: 0px 16px;
+    padding: 0px 16px;
 }
 
 h5 {
@@ -183,23 +188,27 @@ h5 {
 
 <script>
 export default {
-    data: () => ({
-        Iamalone: false,
-        Partner: false,
-        Children: false,
-        slider: 1,
-        items: [
-            {
-                title: 'Early centuries',
-                img:
-                    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
-            },
-            {
-                title: 'Modern centuries',
-                img:
-                    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
-            }
-        ]
-    })
+    data() {
+        return {
+            Iamalone: false,
+            Partner: false,
+            Children: false,
+            slider: '',
+            items: [
+                {
+                    state: false,
+                    title: 'Early centuries',
+                    img:
+                        'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
+                },
+                {
+                    state: false,
+                    title: 'Modern centuries',
+                    img:
+                        'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
+                }
+            ]
+        };
+    }
 };
 </script>
