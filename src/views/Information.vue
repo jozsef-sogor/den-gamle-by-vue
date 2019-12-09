@@ -60,28 +60,25 @@
 
 .v-expansion-panel--active > .v-expansion-panel-header {
     min-height: 64px;
-    border-radius: 10px 10px 0 0 !important;
+    border-radius: 10px !important;
 }
 
-.v-expansion-panels:not(.v-expansion-panels--accordion)
-    > .v-expansion-panel--active {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
+// .v-expansion-panels:not(.v-expansion-panels--accordion)
+//     > .v-expansion-panel--active {
+//     border-bottom-left-radius: 0 !important;
+//     border-bottom-right-radius: 0 !important;
+// }
 
 .v-expansion-panel-content {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom: 3px solid $blue;
-    border-left: 3px solid $blue;
-    border-right: 3px solid $blue;
-    padding-top: 16px;
 
     .v-expansion-panel-content__wrap {
         border: 3px solid $blue;
 
         p {
             margin: 0;
+            padding-top: 16px;
         }
     }
 }
