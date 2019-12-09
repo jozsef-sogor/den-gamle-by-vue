@@ -65,7 +65,7 @@ export default {
         },
 
         geolocate: function() {
-            navigator.geolocation.getCurrentPosition(position => {
+            navigator.geolocation.watchPosition(position => {
                 this.center = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
