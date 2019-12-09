@@ -1,24 +1,22 @@
 <template>
-    <div class="information-pop">
+    <div class="information-pop" v-if="filteredHouse" v-on:pin-clicked="test">
         <!-- <article v-for="house in houses" v-bind:key="house.id">
             {{ house.description }}
             {{ house.title }}
             {{ house.id }}
         </article> -->
-        <template v-if="filteredHouse" v-on:pin-clicked="test" ref="infopop">
-            <div class="titlbkg">
-                <router-link to="/map" class="decoration">
-                    <v-icon class="close">mdi-close</v-icon>
-                </router-link>
-                <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
-            </div>
-            <div class="textHouse">{{ filteredHouse.description }}</div>
-            <router-link to="/tasks" class="decoration">
-                <v-btn block class="btnQuiz">
-                    Take a quiz
-                </v-btn>
+        <div class="titlbkg">
+            <router-link to="/map" class="decoration">
+                <v-icon class="close">mdi-close</v-icon>
             </router-link>
-        </template>
+            <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
+        </div>
+        <div class="textHouse">{{ filteredHouse.description }}</div>
+        <router-link to="/tasks" class="decoration">
+            <v-btn block class="btnQuiz">
+                Take a quiz
+            </v-btn>
+        </router-link>
     </div>
 </template>
 
