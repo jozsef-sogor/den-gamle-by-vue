@@ -10,15 +10,17 @@
                     <div class="slider-flex">
                         <p class="hour">1h</p>
                         <v-slider
-                            v-model="slider"
+                            v-model="$root.availableTime"
                             thumb-label="always"
                             :thumb-size="40"
-                            :value="[0, 1]"
+                            :value="1"
                             min="1"
                             max="6"
                             color="#e58c4f"
                             track-color="#e58c4f75"
-                        ></v-slider>
+                        >
+                            >
+                        </v-slider>
                         <p class="hour">6h</p>
                     </div>
                 </v-col>
@@ -29,16 +31,19 @@
             <h3>
                 Which one do you prefer?
             </h3>
-            <v-item-group multiple>
+            <v-item-group v-model="$root.selectedCenturies" multiple>
                 <v-row>
                     <v-col
-                        v-for="item in items"
-                        :key="item"
+                        v-for="century in centuries"
+                        :key="century.title"
                         cols="6"
                         md="1"
                         class="d-flex align-center flex-row"
                     >
-                        <v-item v-slot:default="{ active, toggle }">
+                        <v-item
+                            v-slot:default="{ active, toggle }"
+                            @click="setActive"
+                        >
                             <v-card
                                 :color="active ? 'primary' : ''"
                                 class="flex-grow-1 text-center img-bck"
@@ -47,11 +52,11 @@
                                 @click="toggle"
                             >
                                 <v-img
-                                    :src="`${item.img}`"
+                                    :src="`${century.img}`"
                                     class="img-bck"
                                 ></v-img>
                                 <div class="title-centered">
-                                    {{ item.title }}
+                                    {{ century.title }}
                                 </div>
                             </v-card>
                         </v-item>
@@ -65,26 +70,26 @@
                 <h3>Who are you visiting with?</h3>
 
                 <v-checkbox
-                    v-model="Iamalone"
+                    v-model="$root.iamalone"
                     class="mx-2 black--text"
                     label="I am alone"
                     color="#e58c4f"
                 ></v-checkbox>
                 <v-checkbox
-                    v-model="Partner"
+                    v-model="$root.partner"
                     class="mx-2 black--text"
                     label="Partner"
                     color="#e58c4f"
                 ></v-checkbox>
                 <v-checkbox
-                    v-model="Children"
+                    v-model="$root.children"
                     class="mx-2 black--text"
                     label="Children"
                     color="#e58c4f"
                 ></v-checkbox>
             </v-col>
         </v-container>
-        <router-link to="/map" class="decoration">
+        <router-link to="/routes" class="decoration">
             <v-row class="btn-container" align="center">
                 <div class="btn-intro">
                     <v-btn large>CONTINUE</v-btn>
@@ -96,7 +101,7 @@
 
 <style scoped lang="scss">
 .preferences {
-    border: 0px 16px;
+    padding: 0px 16px;
 }
 
 h5 {
@@ -184,11 +189,7 @@ h5 {
 <script>
 export default {
     data: () => ({
-        Iamalone: false,
-        Partner: false,
-        Children: false,
-        slider: 1,
-        items: [
+        centuries: [
             {
                 title: 'Early centuries',
                 img:
@@ -200,6 +201,7 @@ export default {
                     'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
             }
         ]
-    })
+    }),
+    mounted() {}
 };
 </script>

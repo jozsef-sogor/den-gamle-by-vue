@@ -2,8 +2,13 @@
     <v-app>
         <v-content>
             <router-view />
+            <v-btn large @click="overlay = !overlay">CONTINUE</v-btn>
         </v-content>
+
         <Navbar v-if="!$route.meta.hideNavigation" />
+        <v-overlay :value="overlay">
+            <v-progress-circular indeterminate size="64"></v-progress-circular>
+        </v-overlay>
     </v-app>
 </template>
 
@@ -46,6 +51,20 @@ export default {
 
     components: {
         Navbar
+    },
+
+    data() {
+        return {
+            overlay: false
+        };
+    },
+    watch: {
+        overlay(val) {
+            val &&
+                setTimeout(() => {
+                    this.overlay = false;
+                }, 3000);
+        }
     }
 };
 </script>

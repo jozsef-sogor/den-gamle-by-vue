@@ -4,7 +4,9 @@
             <v-icon x-large class="orange-color">mdi-arrow-left-circle</v-icon>
         </router-link>
         <h1>Tasks</h1>
-        <div class="progress">
+        <div
+            class="progress d-flex justify-space-between flex-row align-center"
+        >
             <v-progress-linear
                 v-model="knowledge"
                 height="20"
@@ -14,8 +16,11 @@
             >
                 <h3>{{ Math.ceil(knowledge) }}/{{ done }}</h3>
             </v-progress-linear>
-            <v-img class="" src="../assets/img/gift.png"></v-img>
+            <v-icon x-large color="#e58c4f" class="pl-4">
+                mdi-gift-outline
+            </v-icon>
         </div>
+
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
                 <v-expansion-panel>
@@ -150,7 +155,10 @@ export default {
     data() {
         return {
             knowledge: 25,
-            done: 10
+            done: 10,
+            Iamalone: false,
+            Partner: false,
+            Children: false
         };
     }
 };
