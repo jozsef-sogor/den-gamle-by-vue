@@ -1,14 +1,12 @@
 <template>
-    <div class="information-pop" v-if="filteredHouse" v-on:pin-clicked="test">
+    <div class="information-pop">
         <!-- <article v-for="house in houses" v-bind:key="house.id">
             {{ house.description }}
             {{ house.title }}
             {{ house.id }}
         </article> -->
         <div class="titlbkg">
-            <router-link to="/map" class="decoration">
-                <v-icon class="close">mdi-close</v-icon>
-            </router-link>
+            <v-icon class="close" @click="closeInfoPop">mdi-close</v-icon>
             <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
         </div>
         <div class="textHouse">{{ filteredHouse.description }}</div>
@@ -29,9 +27,9 @@
     width: 100vw;
     .close {
         color: white;
-        position: absolute;
-        top: 5px;
-        left: 275px;
+        position: fixed;
+        right: 0;
+        padding: 5px 5px 0;
     }
     .titlbkg {
         background-color: $blue;
@@ -72,8 +70,8 @@ export default {
         }
     },
     methods: {
-        test() {
-            console.log('click caugth on inforpop');
+        closeInfoPop() {
+            this.$emit('close-clicked', '');
         }
     }
 };

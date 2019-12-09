@@ -5,7 +5,6 @@
             :zoom="12"
             :houseId="1"
             style="width:100%;  height: 100vh;"
-            @pin-clicked="test"
         >
             <gmap-marker
                 :key="index"
@@ -46,8 +45,7 @@ export default {
             center: { lat: 45.508, lng: -73.587 },
             markers: [],
             places: [],
-            currentPlace: null,
-            houseId: '1'
+            currentPlace: null
         };
     },
 
@@ -81,13 +79,8 @@ export default {
             });
         },
         putData(description, title, id) {
-            console.log('start');
             this.$emit('pin-clicked', id);
             console.log(description + title + id);
-            console.log('end');
-        },
-        test() {
-            console.log('click caught');
         }
     }
 };
