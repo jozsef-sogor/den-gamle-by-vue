@@ -3,7 +3,9 @@
         <gmap-map
             :center="center"
             :zoom="12"
+            :houseId="1"
             style="width:100%;  height: 100vh;"
+            @pin-clicked="test"
         >
             <gmap-marker
                 :key="index"
@@ -14,6 +16,7 @@
                 :year="m.year"
                 :task="m.task"
                 :id="m.id"
+                ref="marker"
                 @click="putData(m.description, m.title, m.id)"
             ></gmap-marker>
         </gmap-map>
@@ -43,7 +46,8 @@ export default {
             center: { lat: 45.508, lng: -73.587 },
             markers: [],
             places: [],
-            currentPlace: null
+            currentPlace: null,
+            houseId: '1'
         };
     },
 
@@ -77,7 +81,13 @@ export default {
             });
         },
         putData(description, title, id) {
+            console.log('start');
+            this.$emit('pin-clicked', id);
             console.log(description + title + id);
+            console.log('end');
+        },
+        test() {
+            console.log('click caught');
         }
     }
 };

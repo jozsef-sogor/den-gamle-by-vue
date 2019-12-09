@@ -5,7 +5,7 @@
             {{ house.title }}
             {{ house.id }}
         </article> -->
-        <template v-if="filteredHouse">
+        <template v-if="filteredHouse" v-on:pin-clicked="test" ref="infopop">
             {{ filteredHouse.description }}
         </template>
     </div>
@@ -18,12 +18,17 @@ export default {
     data() {
         return {
             houses: this.$root.houses,
-            houseId: '17kmMc24VIjPIFLbXM0s'
+            houseId: ''
         };
     },
     computed: {
         filteredHouse() {
-            return this.houses.find(h => h.id === this.houseId);
+            return this.houses.find(h => h.id === this.$attrs.houseId);
+        }
+    },
+    methods: {
+        test() {
+            console.log('click caugth on inforpop');
         }
     }
 };
