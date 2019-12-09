@@ -15,9 +15,11 @@
                 </ul>
             </v-card-text>
             <v-card-actions>
-                <v-btn color="orange" text>
-                    Start
-                </v-btn>
+                <router-link to="/map">
+                    <v-btn large class="btn-start" text>
+                        Start
+                    </v-btn>
+                </router-link>
             </v-card-actions>
         </div>
     </v-card>
