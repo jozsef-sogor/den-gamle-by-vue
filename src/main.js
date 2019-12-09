@@ -28,7 +28,8 @@ new Vue({
             partner: false,
             children: false,
             availableTime: 1,
-            selectedCenturies: [0]
+            selectedCenturies: [0],
+            selectedRoute: ''
             // overlay: false
         };
     },

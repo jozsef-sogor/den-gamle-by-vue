@@ -6,17 +6,22 @@
             src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
         ></v-img>
 
-        <v-card-title class="route">Route {{}}</v-card-title>
+        <v-card-title class="route">{{ route.title }}</v-card-title>
         <div class="card-info">
             <v-card-text class="text--primary">
                 <ul>
-                    <li>Distance: {{}} km</li>
-                    <li>Time: {{}}</li>
+                    <li>Distance: {{ route.distance }} km</li>
+                    <li>Time: {{ route.time }}</li>
                 </ul>
             </v-card-text>
             <v-card-actions>
                 <router-link to="/map">
-                    <v-btn large class="btn-start" text>
+                    <v-btn
+                        large
+                        class="btn-start"
+                        text
+                        @click="selectRoute(route.id)"
+                    >
                         Start
                     </v-btn>
                 </router-link>
@@ -52,6 +57,14 @@
 
 <script>
 export default {
-    name: 'routesCard'
+    name: 'routesCard',
+    props: {
+        route: Object
+    },
+    methods: {
+        selectRoute(id) {
+            this.$root.selectedRoute = id;
+        }
+    }
 };
 </script>

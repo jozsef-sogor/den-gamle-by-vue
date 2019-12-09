@@ -40,10 +40,7 @@
                         md="1"
                         class="d-flex align-center flex-row"
                     >
-                        <v-item
-                            v-slot:default="{ active, toggle }"
-                            @click="setActive"
-                        >
+                        <v-item v-slot:default="{ active, toggle }">
                             <v-card
                                 :color="active ? 'primary' : ''"
                                 class="flex-grow-1 text-center img-bck"
