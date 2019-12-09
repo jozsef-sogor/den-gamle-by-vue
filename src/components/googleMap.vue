@@ -38,6 +38,8 @@
 </style>
 
 <script>
+import { db } from '../db';
+
 export default {
     name: 'googleMap',
     components: {},
@@ -50,7 +52,8 @@ export default {
             markers: [],
             places: [],
             userLocation: { lat: '', lng: '' },
-            currentPlace: null
+            currentPlace: null,
+            userPos: this.$root.userPos
         };
     },
 
@@ -73,6 +76,11 @@ export default {
                 console.log(position);
                 this.userLocation.lat = position.coords.latitude;
                 this.userLocation.lng = position.coords.longitude;
+                db.collection('userPos').add({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                    timestamp: Date.now()
+                });
                 // this.houses.push(this.userLocation);
             });
         },

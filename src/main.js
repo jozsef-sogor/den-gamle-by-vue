@@ -27,6 +27,7 @@ new Vue({
         };
     },
     firestore: {
-        houses: db.collection('HousesInformation')
+        houses: db.collection('HousesInformation'),
+        userPos: db.collection('userPos')
     }
 }).$mount('#app');
