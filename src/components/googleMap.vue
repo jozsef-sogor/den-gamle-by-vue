@@ -71,6 +71,18 @@ export default {
                 })
             );
             console.log(filteredHouses);
+            for (let filteredHouse of filteredHouses) {
+                //console.log(this.userLocation, filteredHouse);
+                if (
+                    Number(this.userLocation.lng).toFixed(5) ==
+                        Number(filteredHouse.lng).toFixed(5) &&
+                    Number(this.userLocation.lat).toFixed(5) ==
+                        Number(filteredHouse.lat).toFixed(5)
+                ) {
+                    console.log(filteredHouse.id);
+                    this.$emit('positionMatch', filteredHouse.id);
+                }
+            }
             return filteredHouses;
         }
     },
@@ -92,6 +104,8 @@ export default {
                     lng: position.coords.longitude
                 };
                 console.log(position);
+                console.log(this.routeLng);
+
                 this.userLocation.lat = position.coords.latitude;
                 this.userLocation.lng = position.coords.longitude;
                 db.collection('userPos').add({

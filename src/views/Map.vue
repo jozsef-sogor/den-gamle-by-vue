@@ -6,7 +6,7 @@
             @close-clicked="closePopUp"
         />
 
-        <google-map @pin-clicked="openPopUp" />
+        <google-map @pin-clicked="openPopUp" @positionMatch="openPopUp" />
     </div>
 </template>
 
