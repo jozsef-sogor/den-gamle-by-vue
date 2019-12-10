@@ -79,6 +79,12 @@
                     color="#e58c4f"
                 ></v-checkbox>
                 <v-checkbox
+                    v-model="$root.group"
+                    class="mx-2 black--text"
+                    label="Group"
+                    color="#e58c4f"
+                ></v-checkbox>
+                <v-checkbox
                     v-model="$root.children"
                     class="mx-2 black--text"
                     label="Children"

@@ -24,6 +24,7 @@ new Vue({
     data() {
         return {
             houses: [],
+            group: false,
             iamalone: false,
             partner: false,
             children: false,
