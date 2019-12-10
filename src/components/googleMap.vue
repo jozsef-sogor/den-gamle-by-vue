@@ -48,7 +48,7 @@ export default {
             houses: this.$root.houses,
             // default to Montreal to keep it simple
             // change this to whatever makes sense
-            center: this.$root.center,
+            center: { lat: 56.15956, lng: 10.190563 },
             markers: [],
             places: [],
             userLocation: this.$root.userLocation,

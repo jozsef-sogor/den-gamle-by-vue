@@ -45,7 +45,7 @@ export default {
     name: 'navbar',
     data() {
         return {
-            bottomNav: 'map'
+            bottomNav: window.location.pathname.substring(1)
         };
     }
 };
