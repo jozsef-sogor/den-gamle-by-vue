@@ -36,9 +36,8 @@
                                         </div>
                                     </v-row>
                                     <v-row
-                                        class="btn-container"
-                                        d-flex
-                                        justify-space-between
+                                        class="btn-container d-flex
+                                        justify-space-around"
                                     >
                                         <router-link
                                             to="/preferences"

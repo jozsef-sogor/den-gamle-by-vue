@@ -23,30 +23,29 @@
 
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
-                <v-expansion-panel>
+                <v-expansion-panel
+                    v-for="house of routeHouses"
+                    :key="house.task"
+                >
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
-                        <h2>Question 1</h2>
+                        <h2>{{ house.title }}</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
-                        <p>Question number 1</p>
-                        <v-checkbox
-                            v-model="Iamalone"
-                            class="mx-2 black--text"
-                            label="I am alone"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Partner"
-                            class="mx-2 black--text"
-                            label="Partner"
-                            color="#e58c4f"
-                        ></v-checkbox>
-                        <v-checkbox
-                            v-model="Children"
-                            class="mx-2 black--text"
-                            label="Children"
-                            color="#e58c4f"
-                        ></v-checkbox>
+                        <p>{{ house.task.question }}</p>
+                        <v-radio-group v-model="column" column>
+                            <v-radio
+                                color="#e58c4f"
+                                v-for="option of house.task.options"
+                                :key="option.id"
+                                :label="option"
+                                :value="option"
+                            ></v-radio>
+                        </v-radio-group>
+                        <v-row class="btn-container  d-flex justify-center">
+                            <v-btn large>
+                                DONE
+                            </v-btn>
+                        </v-row>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -57,6 +56,22 @@
 <style scoped lang="scss">
 .tasks {
     padding: 0px 16px;
+
+    p {
+        padding-top: 16px;
+    }
+
+    .btn-container {
+        margin: 5px;
+    }
+    .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+        background-color: $orange;
+        color: white;
+        font-family: $heading-font;
+    }
+    .decoration {
+        text-decoration: none;
+    }
 }
 .v-application .accent--text {
     color: $orange !important;
@@ -83,6 +98,7 @@
 }
 .theme--light.v-expansion-panels .v-expansion-panel {
     margin-bottom: 35px;
+    border-radius: 10px;
 }
 
 .v-application--is-ltr .v-expansion-panel-header {
@@ -96,18 +112,38 @@
 .v-expansion-panel {
     border-radius: 10px;
 }
+
+.v-expansion-panel--active > .v-expansion-panel-header {
+    border-radius: 10px !important;
+}
 </style>
 
 <script>
 export default {
     data() {
         return {
+            houses: this.$root.houses,
             knowledge: 25,
             done: 10,
-            Iamalone: false,
-            Partner: false,
-            Children: false
+            Iamalone: false
         };
+    },
+    computed: {
+        routeHouses() {
+            const houseIds = this.$root.selectedRoute
+                ? this.$root.selectedRoute.houses
+                : [];
+
+            console.log(houseIds);
+            const filteredHouses = this.$root.houses.filter(house =>
+                houseIds.some(houseId => {
+                    console.log(house.id);
+                    return houseId === house.id;
+                })
+            );
+            console.log(filteredHouses);
+            return filteredHouses;
+        }
     }
 };
 </script>
