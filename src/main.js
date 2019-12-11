@@ -24,6 +24,8 @@ new Vue({
     data() {
         return {
             houses: [],
+            userPos: [],
+            routes: [],
             group: false,
             iamalone: false,
             partner: false,

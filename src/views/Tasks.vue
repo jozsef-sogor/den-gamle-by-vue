@@ -42,12 +42,18 @@
                             ></v-radio>
                         </v-radio-group>
                         <v-row class="btn-container  d-flex justify-center">
-                            <v-btn large>
+                            <v-btn @click="snackbar = true" large>
                                 DONE
                             </v-btn>
                         </v-row>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
+                <v-snackbar v-model="snackbar">
+                    {{ text }}
+                    <v-btn color="pink" text @click="snackbar = false">
+                        Close
+                    </v-btn>
+                </v-snackbar>
             </v-expansion-panels>
         </div>
     </div>
@@ -125,7 +131,9 @@ export default {
             houses: this.$root.houses,
             knowledge: 25,
             done: 10,
-            Iamalone: false
+            Iamalone: false,
+            snackbar: false,
+            text: "Hello, I'm a snackbar"
         };
     },
     computed: {
