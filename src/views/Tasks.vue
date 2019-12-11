@@ -32,7 +32,7 @@
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <p>{{ house.task.question }}</p>
-                        <v-radio-group v-model="column" column>
+                        <v-radio-group v-model="column" class="column">
                             <v-radio
                                 color="#e58c4f"
                                 v-for="option of house.task.options"
