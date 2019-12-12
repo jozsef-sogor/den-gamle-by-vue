@@ -31,7 +31,7 @@ new Vue({
             partner: false,
             children: false,
             availableTime: 1,
-            selectedCenturies: [0],
+            selectedCenturies: 0,
             selectedRoute: null,
             userLocation: { lat: '', lng: '' },
             center: { lat: 45.508, lng: -73.587 }
@@ -39,10 +39,23 @@ new Vue({
             // overlay: false
         };
     },
+    methods: {
+        getRoutes() {
+            db.collection('Routes')
+                .get()
+                .then(querySnapshot => {
+                    const documents = querySnapshot.docs.map(doc => doc.data());
+                    console.log(documents);
+                    this.routes = documents;
+                });
+        }
+    },
+    created: function() {
+        this.getRoutes();
+    },
     firestore: {
-        houses: db.collection('HousesInformation'),
-        userPos: db.collection('userPos'),
-        routes: db.collection('Routes')
+        houses: db.collection('HousesInformation')
+        // userPos: db.collection('userPos')
     }
     // watch: {
     //     overlay(val) {

@@ -1,7 +1,11 @@
 <template>
     <div class="routes">
         <h1>Routes</h1>
-        <routesCard v-for="route of routes" :key="route.id" :route="route" />
+        <routesCard
+            v-for="route of filteredRoutes"
+            :key="route.id"
+            :route="route"
+        />
     </div>
 </template>
 
@@ -19,15 +23,25 @@ export default {
             routes: this.$root.routes
         };
     },
+    mounted: function() {
+        console.log(
+            'Imported routes:',
+            this.routes,
+            'Filtered routes:',
+            this.filteredRoutes
+        );
+        console.log(this.routes.centuries);
+    },
     computed: {
-        // filteredRoutes() {
-        //     return this.routes.filter(
-        //         r =>
-        //             r.time <= this.$root.availableTime &&
-        //             r.children === this.$root.children &&
-        //             r.centuries == this.$root.selectedCenturies
-        //     );
-        // }
+        filteredRoutes() {
+            return this.routes.filter(
+                r =>
+                    r.time <= this.$root.availableTime &&
+                    r.children === this.$root.children &&
+                    JSON.stringify(r.centuries) ==
+                        JSON.stringify(this.$root.selectedCenturies)
+            );
+        }
     }
 };
 </script>

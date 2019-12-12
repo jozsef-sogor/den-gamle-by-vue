@@ -27,29 +27,28 @@
             </v-row>
         </v-container>
 
-        <v-container class="container-border">
+        <v-container fluid class="container-border">
             <h3>
                 Which one do you prefer?
             </h3>
-            <v-item-group v-model="$root.selectedCenturies" multiple>
-                <v-row>
+            <v-item-group v-model="$root.selectedCenturies">
+                <v-row class="d-flex align-center flex-row">
                     <v-col
                         v-for="century in centuries"
                         :key="century.title"
                         cols="6"
-                        md="1"
-                        class="d-flex align-center flex-row"
+                        md="6"
                     >
                         <v-item v-slot:default="{ active, toggle }">
                             <v-card
                                 :color="active ? 'primary' : ''"
                                 class="flex-grow-1 text-center img-bck"
-                                height="100px"
-                                width="100px"
                                 @click="toggle"
                             >
                                 <v-img
-                                    :src="`${century.img}`"
+                                    :src="
+                                        require(`@/assets/img/${century.img}`)
+                                    "
                                     class="img-bck"
                                 ></v-img>
                                 <div class="title-centered">
@@ -62,7 +61,7 @@
             </v-item-group>
         </v-container>
 
-        <v-container class="container-border">
+        <v-container fluid class="container-border">
             <v-col cols="12">
                 <h3>Who are you visiting with?</h3>
 
@@ -143,6 +142,11 @@ h5 {
 .img-bck {
     position: relative;
 }
+
+.v-image__image--cover {
+    filter: brightness(0.7);
+}
+
 .title-centered {
     z-index: 1;
     color: white;
@@ -195,13 +199,11 @@ export default {
         centuries: [
             {
                 title: 'Early centuries',
-                img:
-                    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
+                img: 'early-century.jpg'
             },
             {
                 title: 'Modern centuries',
-                img:
-                    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
+                img: 'modern-century.jpg'
             }
         ]
     }),

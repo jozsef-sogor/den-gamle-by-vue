@@ -48,7 +48,7 @@
                         </v-row>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
-                <v-snackbar v-model="snackbar">
+                <v-snackbar v-model="snackbar" class="snackbar">
                     {{ text }}
                     <v-btn color="pink" text @click="snackbar = false">
                         Close
@@ -77,6 +77,10 @@
     }
     .decoration {
         text-decoration: none;
+    }
+
+    .snackbar {
+        bottom: 80px;
     }
 }
 .v-application .accent--text {
@@ -133,7 +137,7 @@ export default {
             done: 10,
             Iamalone: false,
             snackbar: false,
-            text: "Hello, I'm a snackbar"
+            text: 'Your answer has been submitted.'
         };
     },
     computed: {
