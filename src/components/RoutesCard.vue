@@ -35,6 +35,10 @@
     margin: 50px 10px 50px 10px;
     width: 100vw;
     border: 3px solid $blue;
+
+    .a {
+        text-decoration: none;
+    }
     .route {
         font-family: $heading-font;
         color: $blue;

@@ -9,8 +9,6 @@
     </div>
 </template>
 
-<style scoped lang="scss"></style>
-
 <script>
 import routesCard from '../components/RoutesCard.vue';
 
