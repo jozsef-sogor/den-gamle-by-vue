@@ -35,8 +35,6 @@ new Vue({
             selectedRoute: null,
             userLocation: { lat: '', lng: '' },
             center: { lat: 45.508, lng: -73.587 }
-
-            // overlay: false
         };
     },
     methods: {
@@ -55,14 +53,5 @@ new Vue({
     },
     firestore: {
         houses: db.collection('HousesInformation')
-        // userPos: db.collection('userPos')
     }
-    // watch: {
-    //     overlay(val) {
-    //         val &&
-    //             setTimeout(() => {
-    //                 this.overlay = false;
-    //             }, 3000);
-    //     }
-    // }
 }).$mount('#app');
