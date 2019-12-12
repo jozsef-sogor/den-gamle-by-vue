@@ -2,7 +2,6 @@
     <v-app>
         <v-content>
             <router-view />
-            <v-btn large>CONTINUE</v-btn>
         </v-content>
 
         <Navbar v-if="!$route.meta.hideNavigation" />
