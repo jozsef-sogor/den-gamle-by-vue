@@ -189,18 +189,18 @@ export default {
                 {
                     txt:
                         'Set your preferences and create a personalised route, that you can follow while our visit to Den Gamle By.',
-                    src: 'https://i.redd.it/tolt40rquh011.jpg'
+                    src: 'preferences.jpg'
                 },
                 {
                     txt:
                         'Choose the route that better fits you and start your visit to the past.',
 
-                    src: 'https://i.redd.it/tolt40rquh011.jpg'
+                    src: 'routes.jpg'
                 },
                 {
                     txt:
                         'Complete the tasks that will appear in the different attractions and if you answer right, a reward will wait for you.',
-                    src: 'https://i.redd.it/tolt40rquh011.jpg'
+                    src: 'task.jpg'
                 }
             ],
             activeSlide: 0

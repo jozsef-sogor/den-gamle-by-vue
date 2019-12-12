@@ -2,9 +2,9 @@
     <div>
         <gmap-map
             :center="center"
-            :zoom="12"
-            :houseId="1"
-            style="width:100%;  height: 100vh;"
+            :zoom="18"
+            :options="{ disableDefaultUI: true, gestureHandling: 'greedy' }"
+            style="width:100%;"
         >
             <gmap-marker
                 :position="userLocation"
@@ -46,8 +46,6 @@ export default {
     data() {
         return {
             houses: this.$root.houses,
-            // default to Montreal to keep it simple
-            // change this to whatever makes sense
             center: { lat: 56.15956, lng: 10.190563 },
             markers: [],
             places: [],
@@ -89,6 +87,12 @@ export default {
 
     mounted() {
         this.geolocate();
+
+        //this function would prevent the app to display pieces of the map
+        //outside of Den Gamle By so the user can use it only there plus
+        //they can't get lost
+
+        //this.$refs.gmap.$mapObject.fitBounds(boundaries of DGB);
     },
 
     methods: {
