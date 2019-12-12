@@ -9,7 +9,11 @@
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.routes {
+    padding: 0 16px;
+}
+</style>
 
 <script>
 import routesCard from '../components/RoutesCard.vue';

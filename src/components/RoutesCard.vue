@@ -33,8 +33,12 @@
 <style scoped lang="scss">
 .routes-card {
     margin: 50px 10px 50px 10px;
-    width: 100vw;
+    width: 100%;
     border: 3px solid $blue;
+
+    a {
+        text-decoration: none;
+    }
     .route {
         font-family: $heading-font;
         color: $blue;

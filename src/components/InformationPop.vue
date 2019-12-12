@@ -10,8 +10,8 @@
             <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
         </div>
         <div class="textHouse">{{ filteredHouse.description }}</div>
-        <router-link to="/tasks" class="decoration">
-            <v-btn block class="btnQuiz">
+        <router-link to="/tasks" class="decoration d-flex justify-center">
+            <v-btn large class="btnQuiz center">
                 Take a quiz
             </v-btn>
         </router-link>
@@ -20,11 +20,12 @@
 
 <style scoped lang="scss">
 .information-pop {
-    position: absolute;
+    position: fixed;
     z-index: 5;
     background-color: white;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
+
     .close {
         color: white;
         position: fixed;

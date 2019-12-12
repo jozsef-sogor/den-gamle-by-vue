@@ -143,7 +143,8 @@ h5 {
     position: relative;
 }
 
-.v-image__image--cover {
+.v-card > *:first-child:not(.v-btn):not(.v-chip),
+.v-card > .v-card__progress + *:not(.v-btn):not(.v-chip) {
     filter: brightness(0.7);
 }
 
@@ -159,6 +160,7 @@ h5 {
     .primary {
         background-color: $orange !important;
         border-color: $orange !important;
+        filter: drop-shadow(2px 4px 6px black);
     }
     .accent--text {
         color: $orange !important;

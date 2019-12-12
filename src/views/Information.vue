@@ -33,6 +33,7 @@
 <style scoped lang="scss">
 .information {
     overflow-x: hidden;
+    padding: 0 16px;
 
     .icons {
         padding-top: 20px;
