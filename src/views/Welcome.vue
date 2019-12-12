@@ -1,92 +1,92 @@
 <template>
     <div class="welcome">
-        <div class="title">
-            <h1>Den Gamle By</h1>
-        </div>
+        <div class="container">
+            <div class="title">
+                <h1>Den Gamle By</h1>
+            </div>
 
-        <div>
-            <template>
-                <v-card elevation="24" max-width="400" class="mx-auto">
-                    <v-carousel
-                        v-model="activeSlide"
-                        :show-arrows="false"
-                        hide-delimiter-background
-                        light
-                    >
-                        <v-carousel-item
-                            v-for="(item, slideNumber) in items"
-                            :key="slideNumber"
-                            :src="item.src"
+            <div>
+                <template>
+                    <v-card elevation="24" max-width="400" class="mx-auto">
+                        <v-carousel
+                            v-model="activeSlide"
+                            :show-arrows="false"
+                            hide-delimiter-background
+                            light
                         >
-                            <v-sheet height="100%" class="guide">
-                                <v-col>
-                                    <v-row
-                                        class="fill-height"
-                                        align="center"
-                                        justify="center"
-                                    >
-                                        <div class="heading">
-                                            Quick Guide
-                                        </div>
-                                    </v-row>
-                                    <v-img
-                                        class="img"
-                                        :src="
-                                            require(`@/assets/img/${item.src}`)
-                                        "
-                                    ></v-img>
-                                    <v-row>
-                                        <div class="text">
-                                            {{ item.txt }}
-                                        </div>
-                                    </v-row>
-                                    <v-row
-                                        class="btn-container d-flex
+                            <v-carousel-item
+                                v-for="(item, slideNumber) in items"
+                                :key="slideNumber"
+                                :src="item.src"
+                            >
+                                <v-sheet height="100%" class="guide">
+                                    <v-col>
+                                        <v-row
+                                            class="fill-height"
+                                            align="center"
+                                            justify="center"
+                                        >
+                                            <div class="heading">
+                                                Quick Guide
+                                            </div>
+                                        </v-row>
+                                        <v-img
+                                            class="img"
+                                            :src="item.src"
+                                        ></v-img>
+                                        <v-row>
+                                            <div class="text">
+                                                {{ item.txt }}
+                                            </div>
+                                        </v-row>
+                                        <v-row
+                                            class="btn-container d-flex
                                         justify-space-around"
-                                    >
-                                        <router-link
-                                            to="/preferences"
-                                            v-if="slideNumber === 0"
                                         >
-                                            <v-btn large>
-                                                SKIP
+                                            <router-link
+                                                to="/preferences"
+                                                v-if="slideNumber === 0"
+                                            >
+                                                <v-btn large>
+                                                    SKIP
+                                                </v-btn>
+                                            </router-link>
+                                            <v-btn
+                                                @click="activeSlide--"
+                                                large
+                                                v-if="
+                                                    slideNumber === 1 ||
+                                                        slideNumber === 2
+                                                "
+                                            >
+                                                BACK
                                             </v-btn>
-                                        </router-link>
-                                        <v-btn
-                                            @click="activeSlide--"
-                                            large
-                                            v-if="
-                                                slideNumber === 1 ||
-                                                    slideNumber === 2
-                                            "
-                                        >
-                                            BACK
-                                        </v-btn>
-                                        <v-btn
-                                            @click="activeSlide++"
-                                            large
-                                            v-if="
-                                                slideNumber === 0 ||
-                                                    slideNumber === 1
-                                            "
-                                        >
-                                            NEXT
-                                        </v-btn>
-                                        <router-link
-                                            to="/preferences"
-                                            v-if="slideNumber === 2"
-                                        >
-                                            <v-btn large>
-                                                START
+                                            <v-btn
+                                                @click="activeSlide++"
+                                                large
+                                                v-if="
+                                                    slideNumber === 0 ||
+                                                        slideNumber === 1
+                                                "
+                                            >
+                                                NEXT
                                             </v-btn>
-                                        </router-link>
-                                    </v-row>
-                                </v-col>
-                            </v-sheet>
-                        </v-carousel-item>
-                    </v-carousel>
-                </v-card>
-            </template>
+                                            <router-link
+                                                to="/preferences"
+                                                v-if="slideNumber === 2"
+                                            >
+                                                <v-btn large>
+                                                    START
+                                                </v-btn>
+                                            </router-link>
+                                        </v-row>
+                                    </v-col>
+                                </v-sheet>
+                            </v-carousel-item>
+                        </v-carousel>
+                    </v-card>
+                </template>
+            </div>
         </div>
     </div>
 </template>
@@ -96,13 +96,21 @@
     background-image: url('../assets/img/dengamleby.jpg');
     background-size: cover;
     overflow: hidden;
-    padding: 40px 16px;
-    height: 100%;
+    padding: 10px 16px;
+    height: 100vh;
+    position: relative;
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     .title {
         background-color: $blue;
         background: linear-gradient(0, #001638 0%, #002c70 100%);
-        padding: 25px 0;
+        padding: 15px 0;
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
@@ -124,7 +132,7 @@
     }
     .heading {
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         font-family: $heading-font;
         font-size: 30px;
         color: $blue;
@@ -132,7 +140,7 @@
     .text {
         font-family: $body-font;
         font-size: 16px;
-        margin: 30px 30px 20px 30px;
+        margin: 10px 30px 10px 30px;
         text-align: center;
     }
     .img {
@@ -169,7 +177,7 @@
 }
 
 .v-card > *:last-child:not(.v-btn):not(.v-chip) {
-    max-height: 460px;
+    max-height: 420px;
 }
 </style>
 
