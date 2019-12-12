@@ -32,7 +32,9 @@
                                         </v-row>
                                         <v-img
                                             class="img"
-                                            :src="item.src"
+                                            :src="
+                                                require(`@/assets/img/${item.src}`)
+                                            "
                                         ></v-img>
                                         <v-row>
                                             <div class="text">
