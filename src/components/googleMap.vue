@@ -99,13 +99,12 @@ export default {
 
                 for (let filteredHouse of this.routeHouses) {
                     //console.log(this.userLocation, filteredHouse);
-                    if (this.popUpTriggerId == filteredHouse.id) {
-                        console.log('This house already popped up');
-                    } else if (
-                        Number(position.coords.longitude).toFixed(6) ==
-                            Number(filteredHouse.lng).toFixed(6) &&
-                        Number(position.coords.latitude).toFixed(6) ==
-                            Number(filteredHouse.lat).toFixed(6)
+                    if (
+                        Number(position.coords.longitude).toFixed(5) ==
+                            Number(filteredHouse.lng).toFixed(5) &&
+                        Number(position.coords.latitude).toFixed(5) ==
+                            Number(filteredHouse.lat).toFixed(5) &&
+                        this.popUpTriggerId != filteredHouse.id
                     ) {
                         console.log(filteredHouse.id);
                         this.$emit('positionMatch', filteredHouse.id);
