@@ -2,7 +2,7 @@
     <div>
         <gmap-map
             :center="center"
-            :zoom="18"
+            :zoom="19"
             :options="{ disableDefaultUI: true, gestureHandling: 'greedy' }"
             style="width:100%;"
         >
