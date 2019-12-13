@@ -107,6 +107,7 @@ export default {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+                this.$enableHighAccuracy = true;
                 console.log(position);
                 console.log(this.routeLng);
 
@@ -117,7 +118,6 @@ export default {
                     lng: position.coords.longitude,
                     timestamp: Date.now()
                 });
-                // this.houses.push(this.userLocation);
             });
         },
         putData(description, title, id) {
