@@ -51,7 +51,8 @@ export default {
             places: [],
             userLocation: this.$root.userLocation,
             currentPlace: null,
-            userPos: this.$root.userPos
+            userPos: this.$root.userPos,
+            popUpTriggerId: ''
         };
     },
 
@@ -80,7 +81,6 @@ export default {
         //this function would prevent the app to display pieces of the map
         //outside of Den Gamle By so the user can use it only there plus
         //they can't get lost
-
         //this.$refs.gmap.$mapObject.fitBounds(boundaries of DGB);
     },
 
@@ -99,7 +99,9 @@ export default {
 
                 for (let filteredHouse of this.routeHouses) {
                     //console.log(this.userLocation, filteredHouse);
-                    if (
+                    if (this.popUpTriggerId == filteredHouse.id) {
+                        console.log('This house already popped up');
+                    } else if (
                         Number(position.coords.longitude).toFixed(6) ==
                             Number(filteredHouse.lng).toFixed(6) &&
                         Number(position.coords.latitude).toFixed(6) ==
@@ -107,6 +109,7 @@ export default {
                     ) {
                         console.log(filteredHouse.id);
                         this.$emit('positionMatch', filteredHouse.id);
+                        this.popUpTriggerId = filteredHouse.id;
                     } else {
                         console.log(filteredHouse.lng);
                         console.log(this.userLocation.lng);
