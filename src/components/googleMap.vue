@@ -100,10 +100,10 @@ export default {
                 for (let filteredHouse of this.routeHouses) {
                     //console.log(this.userLocation, filteredHouse);
                     if (
-                        Number(position.coords.longitude).toFixed(3) ==
-                            Number(filteredHouse.lng).toFixed(3) &&
-                        Number(position.coords.latitude).toFixed(3) ==
-                            Number(filteredHouse.lat).toFixed(3)
+                        Number(position.coords.longitude).toFixed(4) ==
+                            Number(filteredHouse.lng).toFixed(4) &&
+                        Number(position.coords.latitude).toFixed(4) ==
+                            Number(filteredHouse.lat).toFixed(4)
                     ) {
                         console.log(filteredHouse.id);
                         this.$emit('positionMatch', filteredHouse.id);
