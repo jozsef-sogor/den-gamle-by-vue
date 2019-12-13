@@ -13,14 +13,14 @@
 
 <style lang="scss">
 .slide-enter-active {
-    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    -webkit-animation: slide-in-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
-    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .slide-leave-active {
-    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    -webkit-animation: slide-in-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         reverse both;
-    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
+    animation: slide-in-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
         both;
 }
 
