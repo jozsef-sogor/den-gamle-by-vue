@@ -69,18 +69,7 @@ export default {
                 })
             );
             console.log(filteredHouses);
-            for (let filteredHouse of filteredHouses) {
-                //console.log(this.userLocation, filteredHouse);
-                if (
-                    Number(this.userLocation.lng).toFixed(3) ==
-                        Number(filteredHouse.lng).toFixed(3) &&
-                    Number(this.userLocation.lat).toFixed(3) ==
-                        Number(filteredHouse.lat).toFixed(3)
-                ) {
-                    console.log(filteredHouse.id);
-                    this.$emit('positionMatch', filteredHouse.id);
-                }
-            }
+
             return filteredHouses;
         }
     },
@@ -107,6 +96,23 @@ export default {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+
+                for (let filteredHouse of this.routeHouses) {
+                    //console.log(this.userLocation, filteredHouse);
+                    if (
+                        Number(this.userLocation.lng).toFixed(3) ==
+                            Number(filteredHouse.lng).toFixed(3) &&
+                        Number(this.userLocation.lat).toFixed(3) ==
+                            Number(filteredHouse.lat).toFixed(3)
+                    ) {
+                        console.log(filteredHouse.id);
+                        this.$emit('positionMatch', filteredHouse.id);
+                    } else {
+                        console.log(filteredHouse.lng);
+                        console.log(this.userLocation.lng);
+                    }
+                }
+
                 this.$enableHighAccuracy = true;
                 console.log(position);
                 console.log(this.routeLng);
