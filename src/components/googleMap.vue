@@ -109,7 +109,7 @@ export default {
                         console.log(filteredHouse.id);
                         this.$emit('positionMatch', filteredHouse.id);
                         this.popUpTriggerId = filteredHouse.id;
-                        window.navigator.vibrate([300, 100, 300]);
+                        navigator.vibrate([300, 100, 300]);
                     } else {
                         console.log(filteredHouse.lng);
                         console.log(this.userLocation.lng);
