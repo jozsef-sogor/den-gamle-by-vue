@@ -100,10 +100,10 @@ export default {
                 for (let filteredHouse of this.routeHouses) {
                     //console.log(this.userLocation, filteredHouse);
                     if (
-                        Number(position.coords.longitude).toFixed(5) ==
-                            Number(filteredHouse.lng).toFixed(5) &&
-                        Number(position.coords.latitude).toFixed(5) ==
-                            Number(filteredHouse.lat).toFixed(5) &&
+                        Number(position.coords.longitude).toFixed(4) ==
+                            Number(filteredHouse.lng).toFixed(4) &&
+                        Number(position.coords.latitude).toFixed(4) ==
+                            Number(filteredHouse.lat).toFixed(4) &&
                         this.popUpTriggerId != filteredHouse.id
                     ) {
                         console.log(filteredHouse.id);
