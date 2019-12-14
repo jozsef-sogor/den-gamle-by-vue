@@ -15,16 +15,15 @@
                 </ul>
             </v-card-text>
             <v-card-actions>
-                <router-link to="/map">
-                    <v-btn
-                        large
-                        class="btn-start"
-                        text
-                        @click="selectRoute(route)"
-                    >
-                        Start
-                    </v-btn>
-                </router-link>
+                <v-btn
+                    to="/map"
+                    large
+                    class="btn-start"
+                    text
+                    @click="selectRoute(route)"
+                >
+                    Start
+                </v-btn>
             </v-card-actions>
         </div>
     </v-card>

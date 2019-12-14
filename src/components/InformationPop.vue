@@ -1,20 +1,15 @@
 <template>
     <div class="information-pop">
-        <!-- <article v-for="house in houses" v-bind:key="house.id">
-            {{ house.description }}
-            {{ house.title }}
-            {{ house.id }}
-        </article> -->
         <div class="titlbkg">
             <v-icon class="close" @click="closeInfoPop">mdi-close</v-icon>
             <h2 class="titleHouse">{{ filteredHouse.title }}</h2>
         </div>
         <div class="textHouse">{{ filteredHouse.description }}</div>
-        <router-link to="/tasks" class="decoration d-flex justify-center">
-            <v-btn large class="btnQuiz center">
+        <div class="decoration d-flex justify-center">
+            <v-btn large class="btnQuiz center" to="/tasks">
                 Take a quiz
             </v-btn>
-        </router-link>
+        </div>
     </div>
 </template>
 

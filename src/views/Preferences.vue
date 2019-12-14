@@ -91,13 +91,11 @@
                 ></v-checkbox>
             </v-col>
         </v-container>
-        <router-link to="/routes" class="decoration">
-            <v-row class="btn-container" align="center">
-                <div class="btn-intro">
-                    <v-btn large>CONTINUE</v-btn>
-                </div>
-            </v-row>
-        </router-link>
+        <v-row class="btn-container" align="center">
+            <div class="btn-intro">
+                <v-btn to="/routes" large>CONTINUE</v-btn>
+            </div>
+        </v-row>
     </div>
 </template>
 
@@ -187,9 +185,7 @@ h5 {
     color: white;
     font-family: $heading-font;
 }
-.decoration {
-    text-decoration: none;
-}
+
 .show-btns {
     color: rgba(255, 255, 255, 1);
 }

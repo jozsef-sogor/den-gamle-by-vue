@@ -1,30 +1,17 @@
 <template>
-    <v-bottom-navigation
-        class="bottom-navigation"
-        v-model="bottomNav"
-        app
-        fixed
-    >
-        <router-link to="/information">
-            <v-btn value="information">
-                Information
-                <v-icon>mdi-information-variant</v-icon>
-            </v-btn>
-        </router-link>
-
-        <router-link to="/map">
-            <v-btn value="map">
-                Map
-                <v-icon>mdi-map-outline</v-icon>
-            </v-btn>
-        </router-link>
-
-        <router-link to="/tasks">
-            <v-btn value="tasks">
-                Tasks
-                <v-icon>mdi-format-list-checks</v-icon>
-            </v-btn>
-        </router-link>
+    <v-bottom-navigation class="bottom-navigation" app fixed>
+        <v-btn value="information" to="/information">
+            Information
+            <v-icon>mdi-information-variant</v-icon>
+        </v-btn>
+        <v-btn to="/map">
+            Map
+            <v-icon>mdi-map-outline</v-icon>
+        </v-btn>
+        <v-btn to="/tasks">
+            Tasks
+            <v-icon>mdi-format-list-checks</v-icon>
+        </v-btn>
     </v-bottom-navigation>
 </template>
 
@@ -42,11 +29,6 @@
 
 <script>
 export default {
-    name: 'navbar',
-    data() {
-        return {
-            bottomNav: window.location.pathname.substring(1)
-        };
-    }
+    name: 'navbar'
 };
 </script>

@@ -43,14 +43,13 @@
                                             class="btn-container d-flex
                                         justify-space-around"
                                         >
-                                            <router-link
+                                            <v-btn
+                                                large
                                                 to="/preferences"
                                                 v-if="slideNumber === 0"
                                             >
-                                                <v-btn large>
-                                                    SKIP
-                                                </v-btn>
-                                            </router-link>
+                                                SKIP
+                                            </v-btn>
                                             <v-btn
                                                 @click="activeSlide--"
                                                 large
@@ -71,14 +70,13 @@
                                             >
                                                 NEXT
                                             </v-btn>
-                                            <router-link
+                                            <v-btn
+                                                large
                                                 to="/preferences"
                                                 v-if="slideNumber === 2"
                                             >
-                                                <v-btn large>
-                                                    START
-                                                </v-btn>
-                                            </router-link>
+                                                START
+                                            </v-btn>
                                         </v-row>
                                     </v-col>
                                 </v-sheet>
