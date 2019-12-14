@@ -23,20 +23,17 @@
 
         <div class="expansion-panel">
             <v-expansion-panels class="mb-6">
-                <v-expansion-panel
-                    v-for="house of routeHouses"
-                    :key="house.task"
-                >
+                <v-expansion-panel v-for="house of routeHouses" :key="house.id">
                     <v-expansion-panel-header expand-icon="mdi-menu-down">
                         <h2>{{ house.title }}</h2>
                     </v-expansion-panel-header>
                     <v-expansion-panel-content>
                         <p>{{ house.task.question }}</p>
-                        <v-radio-group v-model="column" class="column">
+                        <v-radio-group class="column">
                             <v-radio
                                 color="#e58c4f"
                                 v-for="option of house.task.options"
-                                :key="option.id"
+                                :key="option"
                                 :label="option"
                                 :value="option"
                             ></v-radio>
