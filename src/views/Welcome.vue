@@ -32,9 +32,7 @@
                                         </v-row>
                                         <v-img
                                             class="img"
-                                            :src="
-                                                require(`@/assets/img/${item.src}`)
-                                            "
+                                            :src="item.src"
                                         ></v-img>
                                         <v-row>
                                             <div class="text">
@@ -191,18 +189,18 @@ export default {
                 {
                     txt:
                         'Set your preferences and create a personalised route, that you can follow while our visit to Den Gamle By.',
-                    src: 'preferences.jpg'
+                    src: require(`@/assets/img/preferences.jpg`)
                 },
                 {
                     txt:
                         'Choose the route that better fits you and start your visit to the past.',
 
-                    src: 'routes.jpg'
+                    src: require(`@/assets/img/routes.jpg`)
                 },
                 {
                     txt:
                         'Complete the tasks that will appear in the different attractions and if you answer right, a reward will wait for you.',
-                    src: 'task.jpg'
+                    src: require(`@/assets/img/task.jpg`)
                 }
             ],
             activeSlide: 0
