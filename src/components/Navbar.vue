@@ -21,8 +21,7 @@
     min-width: 100px;
 }
 
-.v-application a {
-    text-decoration: none;
+.theme--light.v-bottom-navigation {
     color: $orange;
 }
 </style>
