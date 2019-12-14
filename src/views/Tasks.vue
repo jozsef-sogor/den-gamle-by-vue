@@ -142,15 +142,11 @@ export default {
             const houseIds = this.$root.selectedRoute
                 ? this.$root.selectedRoute.houses
                 : [];
-
-            console.log(houseIds);
             const filteredHouses = this.$root.houses.filter(house =>
                 houseIds.some(houseId => {
-                    console.log(house.id);
                     return houseId === house.id;
                 })
             );
-            console.log(filteredHouses);
             return filteredHouses;
         }
     }

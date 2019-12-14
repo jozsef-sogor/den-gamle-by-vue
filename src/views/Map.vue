@@ -63,7 +63,6 @@ export default {
     },
     methods: {
         openPopUp(id) {
-            console.log(id);
             this.childData = id;
         },
         closePopUp() {

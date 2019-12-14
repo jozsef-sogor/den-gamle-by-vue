@@ -27,15 +27,6 @@ export default {
             routes: this.$root.routes
         };
     },
-    mounted: function() {
-        console.log(
-            'Imported routes:',
-            this.routes,
-            'Filtered routes:',
-            this.filteredRoutes
-        );
-        console.log(this.routes.centuries);
-    },
     computed: {
         filteredRoutes() {
             return this.routes.filter(

@@ -61,15 +61,11 @@ export default {
             const houseIds = this.$root.selectedRoute
                 ? this.$root.selectedRoute.houses
                 : [];
-
-            console.log(houseIds);
             const filteredHouses = this.$root.houses.filter(house =>
                 houseIds.some(houseId => {
-                    console.log(house.id);
                     return houseId === house.id;
                 })
             );
-            console.log(filteredHouses);
 
             return filteredHouses;
         }
@@ -98,7 +94,6 @@ export default {
                 };
 
                 for (let filteredHouse of this.routeHouses) {
-                    //console.log(this.userLocation, filteredHouse);
                     if (
                         Number(position.coords.longitude).toFixed(4) ==
                             Number(filteredHouse.lng).toFixed(4) &&
@@ -106,19 +101,16 @@ export default {
                             Number(filteredHouse.lat).toFixed(4) &&
                         this.popUpTriggerId != filteredHouse.id
                     ) {
-                        console.log(filteredHouse.id);
                         this.$emit('positionMatch', filteredHouse.id);
                         this.popUpTriggerId = filteredHouse.id;
                         navigator.vibrate([300, 100, 300]);
                     } else {
-                        console.log(filteredHouse.lng);
-                        console.log(this.userLocation.lng);
+                        // console.log(filteredHouse.lng);
+                        // console.log(this.userLocation.lng);
                     }
                 }
 
                 this.$enableHighAccuracy = true;
-                console.log(position);
-                console.log(this.routeLng);
 
                 this.userLocation.lat = position.coords.latitude;
                 this.userLocation.lng = position.coords.longitude;
@@ -131,7 +123,6 @@ export default {
         },
         putData(description, title, id) {
             this.$emit('pin-clicked', id);
-            console.log(description + title + id);
         }
     }
 };
