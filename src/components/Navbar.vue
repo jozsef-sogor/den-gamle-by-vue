@@ -1,6 +1,6 @@
 <template>
     <v-bottom-navigation class="bottom-navigation" app fixed>
-        <v-btn value="information" to="/information">
+        <v-btn to="/information">
             Information
             <v-icon>mdi-information-variant</v-icon>
         </v-btn>
