@@ -1,0 +1,8 @@
+#redirecting pages on refresh
+
+/home          /
+/preferences   /
+/routes        /
+/map           /
+/tasks         /
+/information   /
