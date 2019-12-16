@@ -92,6 +92,15 @@ export default {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+                this.$enableHighAccuracy = true;
+
+                this.userLocation.lat = position.coords.latitude;
+                this.userLocation.lng = position.coords.longitude;
+                db.collection('userPos').add({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                    timestamp: Date.now()
+                });
 
                 for (let filteredHouse of this.routeHouses) {
                     if (
@@ -109,16 +118,6 @@ export default {
                         // console.log(this.userLocation.lng);
                     }
                 }
-
-                this.$enableHighAccuracy = true;
-
-                this.userLocation.lat = position.coords.latitude;
-                this.userLocation.lng = position.coords.longitude;
-                db.collection('userPos').add({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                    timestamp: Date.now()
-                });
             });
         },
         putData(description, title, id) {
